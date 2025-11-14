@@ -1,0 +1,90 @@
+# ============================================================================
+# Story 4.5: Docker Compose Configuration
+#
+# Docker Compose setup for VCP ML Prediction API
+#
+# Features:
+# - API service with health checks
+# - Volume mounts for models and data
+# - Environment configuration
+# - Local development setup
+# - Automatic restart policy
+#
+# Usage:
+#   docker-compose up -d              # Start in background
+#   docker-compose logs -f            # View logs
+#   docker-compose down               # Stop and remove containers
+#
+# Author: VCP Financial Research Team
+# Created: 2025-11-14
+# ============================================================================
+
+version: '3.8'
+
+services:
+  # ============================================================================
+  # API Service
+  # ============================================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vcp-ml-api:latest
+    container_name: vcp-ml-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount data directory for models and databases
+      - ./data:/app/data
+      # Mount logs directory
+      - ./logs:/app/logs
+    environment:
+      # Model configuration (AC4.5.4)
+      - MODEL_REGISTRY_PATH=/app/data/models/registry
+      - FEATURE_DBS_PATH=/app/data/features
+
+      # API configuration
+      - LOG_LEVEL=INFO
+      - API_PORT=8000
+      - WORKERS=4
+
+      # Python configuration
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - vcp-network
+
+  # ============================================================================
+  # Optional: Redis Cache (for future use)
+  # ============================================================================
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: vcp-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+  #   restart: unless-stopped
+  #   networks:
+  #     - vcp-network
+
+# ============================================================================
+# Networks
+# ============================================================================
+networks:
+  vcp-network:
+    driver: bridge
+
+# ============================================================================
+# Volumes
+# ============================================================================
+# volumes:
+#   redis-data:
+#     driver: local
