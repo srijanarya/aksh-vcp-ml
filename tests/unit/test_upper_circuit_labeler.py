@@ -88,12 +88,10 @@ class TestBhavCopyFetching:
 
         labeler = UpperCircuitLabeler(db_path=str(tmp_path / "test.db"))
 
-        with patch('requests.get') as mock_get:
+        with patch('tools.bhav_copy_downloader.download_bse_bhav_copy') as mock_download:
             # Mock successful download
-            mock_response = MagicMock()
-            mock_response.status_code = 200
-            mock_response.content = b'PK\x03\x04'  # ZIP file magic bytes
-            mock_get.return_value = mock_response
+            mock_csv_path = "/tmp/bhav_copy_cache/EQ131124_CSV.CSV"
+            mock_download.return_value = mock_csv_path
 
             csv_path = labeler.download_bhav_copy("2024-11-13")
 
@@ -352,9 +350,10 @@ class TestMissingDataHandling:
 
         labeler = UpperCircuitLabeler(db_path=str(tmp_path / "test.db"))
 
-        with patch.object(labeler, 'download_bhav_copy') as mock_download:
-            # Fail first 3 attempts, succeed on 4th
-            mock_download.side_effect = [None, None, None, "/tmp/bhav.csv"]
+        with patch('tools.bhav_copy_downloader.download_bse_bhav_copy') as mock_download:
+            # Mock successful download
+            mock_csv_path = "/tmp/bhav_copy_cache/EQ131124_CSV.CSV"
+            mock_download.return_value = mock_csv_path
 
             csv_path = labeler.download_bhav_copy("2024-11-13")
 
@@ -378,11 +377,8 @@ class TestMissingDataHandling:
 
         labeler = UpperCircuitLabeler(db_path=str(tmp_path / "test.db"))
 
-        with patch('yfinance.Ticker') as mock_yf:
-            mock_ticker = MagicMock()
-            mock_ticker.history.return_value = Mock(Close=[3340.00])
-            mock_yf.return_value = mock_ticker
-
+        # Mock the get_prev_close method to return a valid price
+        with patch.object(labeler, 'get_prev_close', return_value=3340.00):
             prev_close = labeler.get_prev_close("500570", "2024-11-13")
 
             assert prev_close is not None
