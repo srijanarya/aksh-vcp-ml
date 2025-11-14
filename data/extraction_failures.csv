@@ -23,3 +23,7 @@ bse_code,company_name,quarter,year,pdf_url,error_type,error_message,attempted_at
 500570,TCS,Q3,2024,https://example.com/pdf,PDF_ENCRYPTED,Cannot decrypt PDF,2025-11-14T12:48:52.851887
 500570,,Q3,2024,url1,PDF_DOWNLOAD_FAILED,Invalid URL 'url1': No scheme supplied. Perhaps you meant https://url1?,2025-11-14T12:48:52.862610
 500209,,Q3,2024,url2,PDF_DOWNLOAD_FAILED,Invalid URL 'url2': No scheme supplied. Perhaps you meant https://url2?,2025-11-14T12:48:52.863229
+500570,,Q3,2024,https://bad-url.com/pdf,PDF_DOWNLOAD_FAILED,404 Not Found,2025-11-14T19:13:11.572558
+500570,TCS,Q3,2024,https://example.com/pdf,PDF_ENCRYPTED,Cannot decrypt PDF,2025-11-14T19:13:11.694397
+500570,,Q3,2024,url1,PDF_DOWNLOAD_FAILED,Invalid URL 'url1': No scheme supplied. Perhaps you meant https://url1?,2025-11-14T19:13:11.704880
+500209,,Q3,2024,url2,PDF_DOWNLOAD_FAILED,Invalid URL 'url2': No scheme supplied. Perhaps you meant https://url2?,2025-11-14T19:13:11.705687

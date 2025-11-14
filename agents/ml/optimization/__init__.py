@@ -6,5 +6,6 @@ database queries, caching, and load testing.
 """
 
 from .feature_optimizer import FeatureOptimizer
+from .inference_optimizer import InferenceOptimizer
 
-__all__ = ['FeatureOptimizer']
+__all__ = ['FeatureOptimizer', 'InferenceOptimizer']
