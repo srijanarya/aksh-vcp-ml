@@ -1,0 +1,250 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "vcp-ml-monitoring",
+    "title": "VCP ML System Monitoring",
+    "tags": [
+      "ml",
+      "vcp",
+      "monitoring"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 16,
+    "version": 1,
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "type": "graph",
+        "title": "API Latency (p95)",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(api_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "p95 latency",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(api_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "p50 latency",
+            "refId": "B"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "s",
+            "label": "Latency"
+          },
+          {
+            "format": "short"
+          }
+        ],
+        "alert": {
+          "conditions": [
+            {
+              "evaluator": {
+                "params": [
+                  0.15
+                ],
+                "type": "gt"
+              },
+              "query": {
+                "params": [
+                  "A",
+                  "5m",
+                  "now"
+                ]
+              },
+              "type": "query"
+            }
+          ],
+          "message": "API p95 latency > 150ms for 5 minutes"
+        }
+      },
+      {
+        "id": 2,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "type": "graph",
+        "title": "Throughput (requests/sec)",
+        "targets": [
+          {
+            "expr": "rate(api_requests_total[1m])",
+            "legendFormat": "{{endpoint}}",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "reqps",
+            "label": "Requests/sec"
+          },
+          {
+            "format": "short"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "type": "graph",
+        "title": "Model F1 Score (30-day rolling)",
+        "targets": [
+          {
+            "expr": "model_f1_score",
+            "legendFormat": "F1 Score",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "percentunit",
+            "label": "F1",
+            "max": 1,
+            "min": 0
+          },
+          {
+            "format": "short"
+          }
+        ],
+        "thresholds": [
+          {
+            "value": 0.67,
+            "colorMode": "critical",
+            "op": "lt",
+            "fill": true,
+            "line": true
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "type": "heatmap",
+        "title": "Data Drift (PSI Scores)",
+        "targets": [
+          {
+            "expr": "feature_drift_psi",
+            "legendFormat": "{{feature}}",
+            "refId": "A"
+          }
+        ],
+        "dataFormat": "tsbuckets",
+        "heatmap": {
+          "hideZeroBuckets": false,
+          "highlightCards": true
+        },
+        "color": {
+          "mode": "spectrum",
+          "cardColor": "#b4ff00",
+          "colorScale": "sqrt",
+          "exponent": 0.5,
+          "min": 0,
+          "max": 0.5
+        }
+      },
+      {
+        "id": 5,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "type": "graph",
+        "title": "Error Rate",
+        "targets": [
+          {
+            "expr": "rate(api_errors_total[5m]) / rate(api_requests_total[5m])",
+            "legendFormat": "Error Rate",
+            "refId": "A"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "percentunit",
+            "label": "Error %"
+          },
+          {
+            "format": "short"
+          }
+        ],
+        "alert": {
+          "conditions": [
+            {
+              "evaluator": {
+                "params": [
+                  0.05
+                ],
+                "type": "gt"
+              },
+              "query": {
+                "params": [
+                  "A",
+                  "10m",
+                  "now"
+                ]
+              },
+              "type": "query"
+            }
+          ],
+          "message": "Error rate > 5% for 10 minutes"
+        }
+      },
+      {
+        "id": 6,
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "type": "graph",
+        "title": "System Resources",
+        "targets": [
+          {
+            "expr": "process_cpu_percent",
+            "legendFormat": "CPU %",
+            "refId": "A"
+          },
+          {
+            "expr": "process_memory_percent",
+            "legendFormat": "Memory %",
+            "refId": "B"
+          }
+        ],
+        "yaxes": [
+          {
+            "format": "percent",
+            "label": "Usage %",
+            "max": 100,
+            "min": 0
+          },
+          {
+            "format": "short"
+          }
+        ]
+      }
+    ]
+  },
+  "overwrite": true
+}
