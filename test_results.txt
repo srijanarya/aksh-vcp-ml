@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/srijan/Desktop/aksh
+plugins: asyncio-1.2.0, anyio-4.11.0
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 738 items / 1 error
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/unit/test_report_generator.py _____________
+ImportError while importing test module '/Users/srijan/Desktop/aksh/tests/unit/test_report_generator.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/unit/test_report_generator.py:6: in <module>
+    from agents.ml.backtesting.report_generator import ReportGenerator
+agents/ml/backtesting/report_generator.py:3: in <module>
+    import plotly.graph_objects as go
+E   ModuleNotFoundError: No module named 'plotly'
+=============================== warnings summary ===============================
+tests/integration/test_docker.py:195
+  /Users/srijan/Desktop/aksh/tests/integration/test_docker.py:195: PytestUnknownMarkWarning: Unknown pytest.mark.docker - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.docker
+
+tests/integration/test_docker.py:222
+  /Users/srijan/Desktop/aksh/tests/integration/test_docker.py:222: PytestUnknownMarkWarning: Unknown pytest.mark.docker - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.docker
+
+../../Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35
+  /Users/srijan/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+    warnings.warn(
+
+../../Library/Python/3.9/lib/python/site-packages/locust/__init__.py:16
+  /Users/srijan/Library/Python/3.9/lib/python/site-packages/locust/__init__.py:16: MonkeyPatchWarning: Monkey-patching ssl after ssl has already been imported may lead to errors, including RecursionError on Python 3.6. It may also silently lead to incorrect behaviour on Python 3.7. Please monkey-patch earlier. See https://github.com/gevent/gevent/issues/1016. Modules that had direct imports (NOT patched): ['urllib3.util (/Users/srijan/Library/Python/3.9/lib/python/site-packages/urllib3/util/__init__.py)', 'anyio.streams.tls (/Users/srijan/Library/Python/3.9/lib/python/site-packages/anyio/streams/tls.py)', 'redis.asyncio.connection (/Users/srijan/Library/Python/3.9/lib/python/site-packages/redis/asyncio/connection.py)', 'urllib3.util.ssl_ (/Users/srijan/Library/Python/3.9/lib/python/site-packages/urllib3/util/ssl_.py)']. 
+    monkey.patch_all()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/unit/test_report_generator.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+======================== 4 warnings, 1 error in 10.19s =========================

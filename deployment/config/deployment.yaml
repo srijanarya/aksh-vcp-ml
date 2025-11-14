@@ -1,0 +1,90 @@
+# Deployment Configuration
+# VCP ML Platform
+# Author: VCP Financial Research Team
+# Created: 2025-11-14
+
+deployment:
+  staging:
+    replicas: 1
+    cpu_limit: "2000m"
+    memory_limit: "4Gi"
+    autoscaling: false
+    port: 8001
+    health_check_interval: 30
+    smoke_test_timeout: 60
+    monitoring_duration: 60
+
+  production:
+    replicas: 2
+    cpu_limit: "4000m"
+    memory_limit: "8Gi"
+    autoscaling: true
+    min_replicas: 2
+    max_replicas: 10
+    target_cpu_percent: 70
+    port: 8000
+    health_check_interval: 30
+    smoke_test_timeout: 300
+    monitoring_duration: 300
+
+monitoring:
+  health_check_interval: 30  # seconds
+  smoke_test_timeout: 300    # seconds
+  rollback_threshold: 0.95   # Rollback if health < 95%
+  max_response_time_ms: 100  # Max acceptable response time
+
+  metrics:
+    enabled: true
+    prometheus_port: 9090
+    scrape_interval: 15
+    retention_days: 30
+
+notifications:
+  slack:
+    enabled: true
+    webhook_url: "${SLACK_WEBHOOK_URL}"
+
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    from_address: "noreply@vcpml.com"
+    to_addresses:
+      - "ops@yourcompany.com"
+
+  events:
+    - deployment_start
+    - deployment_success
+    - deployment_failure
+    - rollback
+    - health_degradation
+
+docker:
+  registry: "docker.io"  # or your private registry
+  image_prefix: "vcp-ml"
+  build_args:
+    - "PYTHON_VERSION=3.10"
+  volumes:
+    - "./data:/app/data"
+    - "./logs:/app/logs"
+
+validation:
+  required_tests: 141
+  min_test_pass_rate: 1.0  # 100%
+  required_env_vars:
+    - ENVIRONMENT
+    - API_HOST
+    - API_PORT
+    - DATABASE_PATH
+    - MODEL_REGISTRY_PATH
+  required_databases:
+    - price_movements.db
+    - features/technical_features.db
+    - features/financial_data.db
+    - features/financial_features.db
+
+rollback:
+  enabled: true
+  backup_data: false  # Set to true for production
+  keep_backups: 5
+  auto_rollback_on_failure: true

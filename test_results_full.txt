@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/srijan/Desktop/aksh
+plugins: asyncio-1.2.0, anyio-4.11.0
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 753 items
+
+tests/integration/test_api.py::test_openapi_docs_accessible 
