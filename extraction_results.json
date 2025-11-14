@@ -1,0 +1,189 @@
+[
+  {
+    "file": "500163_Godfrey_Phillips_India_Ltd.pdf",
+    "company_name": "Godfrey Phillips India Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 1.0
+      },
+      "profit": {
+        "current_quarter_cr": 5.0,
+        "previous_quarter_cr": 3.0,
+        "yoy_quarter_cr": -4.0,
+        "current_half_year_cr": 38171.0
+      },
+      "eps": {
+        "current_quarter_cr": 2.0
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "501298_Industrial_&_Prudential_Invest.pdf",
+    "company_name": "Industrial & Prudential Invest",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 17682.0,
+        "previous_quarter_cr": 756.0,
+        "yoy_quarter_cr": 1695.5,
+        "current_half_year_cr": 197021.0
+      },
+      "profit": {
+        "current_quarter_cr": 1.0,
+        "previous_quarter_cr": 1.0,
+        "yoy_quarter_cr": 15559.0,
+        "current_half_year_cr": 176569.0
+      },
+      "eps": {
+        "current_quarter_cr": 11.0
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "530829_Cil_Securities_Ltd.pdf",
+    "company_name": "Cil Securities Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 221.99,
+        "previous_quarter_cr": 23526.0,
+        "yoy_quarter_cr": 287.0,
+        "current_half_year_cr": 457.25
+      },
+      "eps": {
+        "current_quarter_cr": 16.0,
+        "previous_quarter_cr": 10.0
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "531210_Colinz_Laboratories_Ltd.pdf",
+    "company_name": "Colinz Laboratories Ltd",
+    "status": "failed",
+    "data": {},
+    "error": "No data extracted",
+    "method": null
+  },
+  {
+    "file": "532162_JK_Paper_Ltd.pdf",
+    "company_name": "JK Paper Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 1420.59,
+        "previous_quarter_cr": 1350.29,
+        "yoy_quarter_cr": 742364.0,
+        "current_half_year_cr": 2780.88
+      },
+      "profit": {
+        "current_quarter_cr": 5.0,
+        "previous_quarter_cr": 3.0,
+        "yoy_quarter_cr": 4.0,
+        "current_half_year_cr": 74.77
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "532879_Sir_Shadi_Lal_Enterprises_Ltd.pdf",
+    "company_name": "Sir Shadi Lal Enterprises Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 9670.87,
+        "previous_quarter_cr": 928658.0,
+        "yoy_quarter_cr": 2404.47,
+        "current_half_year_cr": 18957.45
+      },
+      "eps": {
+        "current_quarter_cr": 17.0,
+        "previous_quarter_cr": 2.0,
+        "yoy_quarter_cr": 10.0
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "532898_Power_Grid_Corporation_of_Indi.pdf",
+    "company_name": "Power Grid Corporation of Indi",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 9999.6,
+        "previous_quarter_cr": 9928.23,
+        "yoy_quarter_cr": 10260.06,
+        "current_half_year_cr": 19927.83
+      },
+      "profit": {
+        "current_quarter_cr": 3744.13,
+        "previous_quarter_cr": 4172.27,
+        "yoy_quarter_cr": 4144.08,
+        "current_half_year_cr": 7916.4
+      },
+      "eps": {
+        "current_quarter_cr": 0.0
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  },
+  {
+    "file": "537820_Viji_Finance_Ltd.pdf",
+    "company_name": "Viji Finance Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 57.58,
+        "previous_quarter_cr": 56.52,
+        "yoy_quarter_cr": 60.82,
+        "current_half_year_cr": 114.1
+      },
+      "profit": {
+        "current_quarter_cr": 9.69,
+        "previous_quarter_cr": 33.0,
+        "yoy_quarter_cr": 24.07,
+        "current_half_year_cr": 42.69
+      }
+    },
+    "error": null,
+    "method": "table_extraction"
+  },
+  {
+    "file": "543187_Hitachi_Energy_India_Ltd.pdf",
+    "company_name": "Hitachi Energy India Ltd",
+    "status": "failed",
+    "data": {},
+    "error": "No data extracted",
+    "method": null
+  },
+  {
+    "file": "543595_EP_Biocomposites_Ltd.pdf",
+    "company_name": "EP Biocomposites Ltd",
+    "status": "success",
+    "data": {
+      "revenue": {
+        "current_quarter_cr": 407.48,
+        "previous_quarter_cr": 760.13,
+        "yoy_quarter_cr": 440.49,
+        "current_half_year_cr": 1200.62
+      },
+      "profit": {
+        "current_quarter_cr": -11.0,
+        "previous_quarter_cr": 12.07,
+        "yoy_quarter_cr": 110.63,
+        "current_half_year_cr": 31.07
+      }
+    },
+    "error": null,
+    "method": "text_patterns"
+  }
+]

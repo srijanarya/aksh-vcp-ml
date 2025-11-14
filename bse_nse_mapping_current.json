@@ -1,0 +1,1613 @@
+{
+  "500002": {
+    "nse_symbol": "ABBOTINDIA",
+    "bse_company_name": "ABB India Ltd",
+    "nse_company_name": "ABBOTINDIA",
+    "match_score": 0.8421052631578947,
+    "source": "fuzzy_match",
+    "bse_code": "500002",
+    "confidence": "medium"
+  },
+  "500027": {
+    "nse_symbol": "500027",
+    "bse_company_name": "Atul Ltd",
+    "nse_company_name": "Atul Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "500027",
+    "confidence": "high"
+  },
+  "500043": {
+    "nse_symbol": "BATAINDIA",
+    "bse_company_name": "Bata India Ltd",
+    "nse_company_name": "BATAINDIA",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "500043",
+    "confidence": "high"
+  },
+  "500067": {
+    "nse_symbol": "BLUESTARCO",
+    "bse_company_name": "Blue Star Ltd",
+    "nse_company_name": "BLUESTARCO",
+    "match_score": 0.8421052631578947,
+    "source": "fuzzy_match",
+    "bse_code": "500067",
+    "confidence": "medium"
+  },
+  "500087": {
+    "nse_symbol": "CIL",
+    "bse_company_name": "Cipla Ltd",
+    "nse_company_name": "CIL",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "500087",
+    "confidence": "low"
+  },
+  "500092": {
+    "nse_symbol": "CRSL",
+    "bse_company_name": "CRISIL Ltd",
+    "nse_company_name": "CRSL",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "500092",
+    "confidence": "medium"
+  },
+  "500101": {
+    "nse_symbol": "ARVINDFASN",
+    "bse_company_name": "Arvind Ltd",
+    "nse_company_name": "ARVINDFASN",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "500101",
+    "confidence": "low"
+  },
+  "500133": {
+    "nse_symbol": "ESABINDIA",
+    "bse_company_name": "Esab India Ltd",
+    "nse_company_name": "ESABINDIA",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "500133",
+    "confidence": "high"
+  },
+  "500144": {
+    "nse_symbol": "FINCABLES",
+    "bse_company_name": "Finolex Cables Ltd",
+    "nse_company_name": "FINCABLES",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "500144",
+    "confidence": "low"
+  },
+  "500150": {
+    "nse_symbol": "FOSECOIND",
+    "bse_company_name": "Foseco India Ltd",
+    "nse_company_name": "FOSECOIND",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "500150",
+    "confidence": "medium"
+  },
+  "500168": {
+    "nse_symbol": "GOODYEAR",
+    "bse_company_name": "Goodyear India Ltd",
+    "nse_company_name": "GOODYEAR",
+    "match_score": 0.7272727272727273,
+    "source": "fuzzy_match",
+    "bse_code": "500168",
+    "confidence": "low"
+  },
+  "500179": {
+    "nse_symbol": "HCL-INSYS",
+    "bse_company_name": "HCL Infosystems Ltd",
+    "nse_company_name": "HCL-INSYS",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "500179",
+    "confidence": "low"
+  },
+  "500220": {
+    "nse_symbol": "522285",
+    "bse_company_name": "Jasch Industries Ltd",
+    "nse_company_name": "Jayaswal Neco Industries Ltd",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "500220",
+    "confidence": "low"
+  },
+  "500267": {
+    "nse_symbol": "MAJESAUT",
+    "bse_company_name": "Majestic Auto Ltd",
+    "nse_company_name": "MAJESAUT",
+    "match_score": 0.7619047619047619,
+    "source": "fuzzy_match",
+    "bse_code": "500267",
+    "confidence": "low"
+  },
+  "500306": {
+    "nse_symbol": "539005",
+    "bse_company_name": "Jaykay Enterprises Ltd",
+    "nse_company_name": "Jayatma Enterprises Ltd",
+    "match_score": 0.8648648648648649,
+    "source": "fuzzy_match",
+    "bse_code": "500306",
+    "confidence": "medium"
+  },
+  "500314": {
+    "nse_symbol": "ORIENTHOT",
+    "bse_company_name": "Oriental Hotels Ltd",
+    "nse_company_name": "ORIENTHOT",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "500314",
+    "confidence": "low"
+  },
+  "500330": {
+    "nse_symbol": "RAYMONDLSL",
+    "bse_company_name": "Raymond Ltd",
+    "nse_company_name": "RAYMONDLSL",
+    "match_score": 0.8235294117647058,
+    "source": "fuzzy_match",
+    "bse_code": "500330",
+    "confidence": "medium"
+  },
+  "500335": {
+    "nse_symbol": "BIRLAPREC",
+    "bse_company_name": "Birla Corporation Ltd",
+    "nse_company_name": "BIRLAPREC",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "500335",
+    "confidence": "low"
+  },
+  "500336": {
+    "nse_symbol": "SURYAROSNI",
+    "bse_company_name": "Surya Roshni Ltd",
+    "nse_company_name": "SURYAROSNI",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "500336",
+    "confidence": "high"
+  },
+  "500355": {
+    "nse_symbol": "RALLIS",
+    "bse_company_name": "Rallis India Ltd",
+    "nse_company_name": "Rallis India",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "500355",
+    "confidence": "high"
+  },
+  "500400": {
+    "nse_symbol": "TATAPOWER",
+    "bse_company_name": "Tata Power Company Ltd",
+    "nse_company_name": "TATAPOWER",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "500400",
+    "confidence": "high"
+  },
+  "500480": {
+    "nse_symbol": "CUMMINSIND",
+    "bse_company_name": "Cummins India Ltd",
+    "nse_company_name": "CUMMINSIND",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "500480",
+    "confidence": "medium"
+  },
+  "500488": {
+    "nse_symbol": "ABBOTINDIA",
+    "bse_company_name": "Abbott India Ltd",
+    "nse_company_name": "ABBOTINDIA",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "500488",
+    "confidence": "high"
+  },
+  "500493": {
+    "nse_symbol": "BHARATFORG",
+    "bse_company_name": "Bharat Forge Ltd",
+    "nse_company_name": "BHARATFORG",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "500493",
+    "confidence": "high"
+  },
+  "500530": {
+    "nse_symbol": "BOSCHLTD",
+    "bse_company_name": "Bosch Ltd",
+    "nse_company_name": "BOSCHLTD",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "500530",
+    "confidence": "low"
+  },
+  "500710": {
+    "nse_symbol": "AKZOINDIA",
+    "bse_company_name": "Akzo Nobel India Ltd",
+    "nse_company_name": "AKZOINDIA",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "500710",
+    "confidence": "low"
+  },
+  "500850": {
+    "nse_symbol": "INDIAHOMES",
+    "bse_company_name": "Indian Hotels Company Ltd",
+    "nse_company_name": "INDIAHOMES",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "500850",
+    "confidence": "low"
+  },
+  "501301": {
+    "nse_symbol": "TATAINVEST",
+    "bse_company_name": "Tata Investment Corporation Ltd",
+    "nse_company_name": "TATAINVEST",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "501301",
+    "confidence": "medium"
+  },
+  "501455": {
+    "nse_symbol": "GREAVESCOT",
+    "bse_company_name": "Greaves Cotton Ltd",
+    "nse_company_name": "GREAVESCOT",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "501455",
+    "confidence": "medium"
+  },
+  "502330": {
+    "nse_symbol": "ANDHRAPAP",
+    "bse_company_name": "Andhra Paper Ltd",
+    "nse_company_name": "ANDHRAPAP",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "502330",
+    "confidence": "medium"
+  },
+  "502865": {
+    "nse_symbol": "FORBESCO",
+    "bse_company_name": "Forbes & Company Ltd",
+    "nse_company_name": "FORBESCO",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "502865",
+    "confidence": "medium"
+  },
+  "502958": {
+    "nse_symbol": "LAKSHMIMIL",
+    "bse_company_name": "Lakshmi Mills Company Ltd",
+    "nse_company_name": "LAKSHMIMIL",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "502958",
+    "confidence": "medium"
+  },
+  "505010": {
+    "nse_symbol": "AUTOAXLES",
+    "bse_company_name": "Automotive Axles Ltd",
+    "nse_company_name": "AUTOAXLES",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "505010",
+    "confidence": "low"
+  },
+  "505255": {
+    "nse_symbol": "GMMPFAUDLR",
+    "bse_company_name": "GMM Pfaudler Ltd",
+    "nse_company_name": "GMMPFAUDLR",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "505255",
+    "confidence": "high"
+  },
+  "506235": {
+    "nse_symbol": "ALEMBICLTD",
+    "bse_company_name": "Alembic Ltd",
+    "nse_company_name": "ALEMBICLTD",
+    "match_score": 0.8235294117647058,
+    "source": "fuzzy_match",
+    "bse_code": "506235",
+    "confidence": "medium"
+  },
+  "506260": {
+    "nse_symbol": "ANUHPHR",
+    "bse_company_name": "Anuh Pharma Ltd",
+    "nse_company_name": "ANUHPHR",
+    "match_score": 0.7777777777777778,
+    "source": "fuzzy_match",
+    "bse_code": "506260",
+    "confidence": "low"
+  },
+  "506530": {
+    "nse_symbol": "KEMP",
+    "bse_company_name": "Kemp & Company Ltd",
+    "nse_company_name": "KEMP",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "506530",
+    "confidence": "high"
+  },
+  "507981": {
+    "nse_symbol": "JINDHOT",
+    "bse_company_name": "Jindal Hotels Ltd",
+    "nse_company_name": "JINDHOT",
+    "match_score": 0.7,
+    "source": "fuzzy_match",
+    "bse_code": "507981",
+    "confidence": "low"
+  },
+  "508486": {
+    "nse_symbol": "HAWKINCOOK",
+    "bse_company_name": "Hawkins Cookers Ltd",
+    "nse_company_name": "HAWKINCOOK",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "508486",
+    "confidence": "medium"
+  },
+  "508814": {
+    "nse_symbol": "COSMOFIRST",
+    "bse_company_name": "Cosmo First Ltd",
+    "nse_company_name": "COSMOFIRST",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "508814",
+    "confidence": "high"
+  },
+  "508906": {
+    "nse_symbol": "EVERESTIND",
+    "bse_company_name": "Everest Industries Ltd",
+    "nse_company_name": "EVERESTIND",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "508906",
+    "confidence": "low"
+  },
+  "508933": {
+    "nse_symbol": "AYMSYNTEX",
+    "bse_company_name": "AYM Syntex Ltd",
+    "nse_company_name": "AYMSYNTEX",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "508933",
+    "confidence": "high"
+  },
+  "509243": {
+    "nse_symbol": "TVSSRICHAK",
+    "bse_company_name": "TVS Srichakra Ltd",
+    "nse_company_name": "TVSSRICHAK",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "509243",
+    "confidence": "medium"
+  },
+  "509567": {
+    "nse_symbol": "GOACARBON",
+    "bse_company_name": "Goa Carbon Ltd-$",
+    "nse_company_name": "GOACARBON",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "509567",
+    "confidence": "high"
+  },
+  "509675": {
+    "nse_symbol": "BIRLACORPN",
+    "bse_company_name": "Birlanu Ltd",
+    "nse_company_name": "BIRLACORPN",
+    "match_score": 0.7058823529411765,
+    "source": "fuzzy_match",
+    "bse_code": "509675",
+    "confidence": "low"
+  },
+  "511074": {
+    "nse_symbol": "EASYFIN",
+    "bse_company_name": "Easy Fincorp Ltd",
+    "nse_company_name": "EASYFIN",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "511074",
+    "confidence": "low"
+  },
+  "511153": {
+    "nse_symbol": "ANJANIFOODS",
+    "bse_company_name": "Anjani Foods Ltd",
+    "nse_company_name": "ANJANIFOODS",
+    "match_score": 0.9565217391304348,
+    "source": "fuzzy_match",
+    "bse_code": "511153",
+    "confidence": "high"
+  },
+  "511196": {
+    "nse_symbol": "CANFINHOME",
+    "bse_company_name": "Can Fin Homes Ltd",
+    "nse_company_name": "CANFINHOME",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "511196",
+    "confidence": "medium"
+  },
+  "511593": {
+    "nse_symbol": "LIBORDFIN",
+    "bse_company_name": "Libord Finance Ltd",
+    "nse_company_name": "LIBORDFIN",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "511593",
+    "confidence": "low"
+  },
+  "511742": {
+    "nse_symbol": "UGROCAP",
+    "bse_company_name": "Ugro Capital Ltd",
+    "nse_company_name": "UGROCAP",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "511742",
+    "confidence": "low"
+  },
+  "512261": {
+    "nse_symbol": "BAJGLOB",
+    "bse_company_name": "Bajaj Global Ltd",
+    "nse_company_name": "BAJGLOB",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "512261",
+    "confidence": "low"
+  },
+  "512573": {
+    "nse_symbol": "AVANTIFEED",
+    "bse_company_name": "Avanti Feeds Ltd",
+    "nse_company_name": "AVANTIFEED",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "512573",
+    "confidence": "high"
+  },
+  "513517": {
+    "nse_symbol": "STEELCITY",
+    "bse_company_name": "Steelcast Ltd",
+    "nse_company_name": "STEELCITY",
+    "match_score": 0.7777777777777778,
+    "source": "fuzzy_match",
+    "bse_code": "513517",
+    "confidence": "low"
+  },
+  "514234": {
+    "nse_symbol": "SANGAMIND",
+    "bse_company_name": "Sangam India Ltd",
+    "nse_company_name": "SANGAMIND",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "514234",
+    "confidence": "medium"
+  },
+  "515030": {
+    "nse_symbol": "ASAHIINDIA",
+    "bse_company_name": "Asahi India Glass Ltd",
+    "nse_company_name": "ASAHIINDIA",
+    "match_score": 0.7407407407407407,
+    "source": "fuzzy_match",
+    "bse_code": "515030",
+    "confidence": "low"
+  },
+  "515055": {
+    "nse_symbol": "ANANTRAJ",
+    "bse_company_name": "Anant Raj Ltd",
+    "nse_company_name": "ANANTRAJ",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "515055",
+    "confidence": "high"
+  },
+  "515147": {
+    "nse_symbol": "HALDYNGL",
+    "bse_company_name": "Haldyn Glass Ltd",
+    "nse_company_name": "HALDYNGL",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "515147",
+    "confidence": "medium"
+  },
+  "517096": {
+    "nse_symbol": "APLAB",
+    "bse_company_name": "Aplab Ltd",
+    "nse_company_name": "APLAB",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "517096",
+    "confidence": "high"
+  },
+  "517271": {
+    "nse_symbol": "HBLENGINE",
+    "bse_company_name": "HBL Engineering Ltd",
+    "nse_company_name": "HBLENGINE",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "517271",
+    "confidence": "low"
+  },
+  "517423": {
+    "nse_symbol": "517423",
+    "bse_company_name": "Integra Switchgear Ltd",
+    "nse_company_name": "Integra Switchgear Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "517423",
+    "confidence": "high"
+  },
+  "519183": {
+    "nse_symbol": "ADFFOODS",
+    "bse_company_name": "Adf Foods Ltd",
+    "nse_company_name": "ADFFOODS",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "519183",
+    "confidence": "high"
+  },
+  "519552": {
+    "nse_symbol": "HERITGFOOD",
+    "bse_company_name": "Heritage Foods Ltd",
+    "nse_company_name": "HERITGFOOD",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "519552",
+    "confidence": "medium"
+  },
+  "522285": {
+    "nse_symbol": "522285",
+    "bse_company_name": "Jayaswal Neco Industries Ltd",
+    "nse_company_name": "Jayaswal Neco Industries Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "522285",
+    "confidence": "high"
+  },
+  "523319": {
+    "nse_symbol": "BALMLAWRIE",
+    "bse_company_name": "Balmer Lawrie & Company Ltd",
+    "nse_company_name": "BALMLAWRIE",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "523319",
+    "confidence": "medium"
+  },
+  "523449": {
+    "nse_symbol": "SHAREINDIA",
+    "bse_company_name": "Sharp India Ltd",
+    "nse_company_name": "SHAREINDIA",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "523449",
+    "confidence": "medium"
+  },
+  "523467": {
+    "nse_symbol": "JAIMATAG",
+    "bse_company_name": "Jai Mata Glass Ltd",
+    "nse_company_name": "JAIMATAG",
+    "match_score": 0.7272727272727273,
+    "source": "fuzzy_match",
+    "bse_code": "523467",
+    "confidence": "low"
+  },
+  "523652": {
+    "nse_symbol": "KKPLASTICK",
+    "bse_company_name": "Kkalpana Plastick Ltd",
+    "nse_company_name": "KKPLASTICK",
+    "match_score": 0.7407407407407407,
+    "source": "fuzzy_match",
+    "bse_code": "523652",
+    "confidence": "low"
+  },
+  "523694": {
+    "nse_symbol": "APCOTEXIND",
+    "bse_company_name": "Apcotex Industries Ltd",
+    "nse_company_name": "APCOTEXIND",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "523694",
+    "confidence": "low"
+  },
+  "524200": {
+    "nse_symbol": "VINATIORGA",
+    "bse_company_name": "Vinati Organics Ltd",
+    "nse_company_name": "VINATIORGA",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "524200",
+    "confidence": "medium"
+  },
+  "524348": {
+    "nse_symbol": "AARTIDRUGS",
+    "bse_company_name": "Aarti Drugs Ltd",
+    "nse_company_name": "AARTIDRUGS",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "524348",
+    "confidence": "high"
+  },
+  "524614": {
+    "nse_symbol": "IEL",
+    "bse_company_name": "IEL Ltd",
+    "nse_company_name": "IEL",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "524614",
+    "confidence": "high"
+  },
+  "524634": {
+    "nse_symbol": "524634",
+    "bse_company_name": "Alufluoride Ltd",
+    "nse_company_name": "Alufluoride Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "524634",
+    "confidence": "high"
+  },
+  "524723": {
+    "nse_symbol": "BIJHANS",
+    "bse_company_name": "Bijoy Hans Ltd",
+    "nse_company_name": "BIJHANS",
+    "match_score": 0.8235294117647058,
+    "source": "fuzzy_match",
+    "bse_code": "524723",
+    "confidence": "medium"
+  },
+  "526217": {
+    "nse_symbol": "HITECHCORP",
+    "bse_company_name": "Hitech Corporation Ltd",
+    "nse_company_name": "HITECHCORP",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "526217",
+    "confidence": "low"
+  },
+  "526315": {
+    "nse_symbol": "DIVSHKT",
+    "bse_company_name": "Divyashakti Ltd",
+    "nse_company_name": "DIVSHKT",
+    "match_score": 0.7777777777777778,
+    "source": "fuzzy_match",
+    "bse_code": "526315",
+    "confidence": "low"
+  },
+  "526367": {
+    "nse_symbol": "GANESHHOU",
+    "bse_company_name": "Ganesh Housing Ltd",
+    "nse_company_name": "GANESHHOU",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "526367",
+    "confidence": "low"
+  },
+  "526807": {
+    "nse_symbol": "SEAMECLTD",
+    "bse_company_name": "Seamec Ltd",
+    "nse_company_name": "SEAMECLTD",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "526807",
+    "confidence": "medium"
+  },
+  "526953": {
+    "nse_symbol": "VENUSREM",
+    "bse_company_name": "Venus Remedies Ltd",
+    "nse_company_name": "VENUSREM",
+    "match_score": 0.7272727272727273,
+    "source": "fuzzy_match",
+    "bse_code": "526953",
+    "confidence": "low"
+  },
+  "530073": {
+    "nse_symbol": "SANGHVIMOV",
+    "bse_company_name": "Sanghvi Movers Ltd",
+    "nse_company_name": "SANGHVIMOV",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "530073",
+    "confidence": "medium"
+  },
+  "530393": {
+    "nse_symbol": "530393",
+    "bse_company_name": "DB International Stock Brokers Ltd",
+    "nse_company_name": "DB International Stock Brokers Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "530393",
+    "confidence": "high"
+  },
+  "530669": {
+    "nse_symbol": "ACEENGITEC",
+    "bse_company_name": "Ace Engitech Ltd",
+    "nse_company_name": "ACEENGITEC",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "530669",
+    "confidence": "high"
+  },
+  "530759": {
+    "nse_symbol": "STERTOOLS",
+    "bse_company_name": "Sterling Tools Ltd",
+    "nse_company_name": "STERTOOLS",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "530759",
+    "confidence": "low"
+  },
+  "530839": {
+    "nse_symbol": "CLIOINFO",
+    "bse_company_name": "Clio Infotech Ltd",
+    "nse_company_name": "CLIOINFO",
+    "match_score": 0.7619047619047619,
+    "source": "fuzzy_match",
+    "bse_code": "530839",
+    "confidence": "low"
+  },
+  "530965": {
+    "nse_symbol": "INDIANB",
+    "bse_company_name": "Indian Oil Corporation Ltd",
+    "nse_company_name": "INDIANB",
+    "match_score": 0.7058823529411765,
+    "source": "fuzzy_match",
+    "bse_code": "530965",
+    "confidence": "low"
+  },
+  "530973": {
+    "nse_symbol": "530889",
+    "bse_company_name": "Alfa Ica India Ltd",
+    "nse_company_name": "Alka India",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "530973",
+    "confidence": "low"
+  },
+  "530999": {
+    "nse_symbol": "BALAMINES",
+    "bse_company_name": "Balaji Amines Ltd",
+    "nse_company_name": "BALAMINES",
+    "match_score": 0.8181818181818182,
+    "source": "fuzzy_match",
+    "bse_code": "530999",
+    "confidence": "medium"
+  },
+  "531162": {
+    "nse_symbol": "EMAMILTD",
+    "bse_company_name": "Emami Ltd",
+    "nse_company_name": "EMAMILTD",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "531162",
+    "confidence": "low"
+  },
+  "531163": {
+    "nse_symbol": "KEMISTAR",
+    "bse_company_name": "Kemistar Corporation Ltd",
+    "nse_company_name": "KEMISTAR",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "531163",
+    "confidence": "high"
+  },
+  "531274": {
+    "nse_symbol": "KINETRU",
+    "bse_company_name": "Kinetic Trust Ltd",
+    "nse_company_name": "KINETRU",
+    "match_score": 0.7,
+    "source": "fuzzy_match",
+    "bse_code": "531274",
+    "confidence": "low"
+  },
+  "531335": {
+    "nse_symbol": "ZYDUSWELL",
+    "bse_company_name": "Zydus Wellness Ltd",
+    "nse_company_name": "ZYDUSWELL",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "531335",
+    "confidence": "low"
+  },
+  "531431": {
+    "nse_symbol": "SHAKTIPUMP",
+    "bse_company_name": "Shakti Pumps India Ltd",
+    "nse_company_name": "SHAKTIPUMP",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "531431",
+    "confidence": "low"
+  },
+  "531533": {
+    "nse_symbol": "ACCEDERE",
+    "bse_company_name": "Accedere Ltd",
+    "nse_company_name": "ACCEDERE",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "531533",
+    "confidence": "high"
+  },
+  "531592": {
+    "nse_symbol": "GENPHARMA",
+    "bse_company_name": "Genpharmasec Ltd",
+    "nse_company_name": "GENPHARMA",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "531592",
+    "confidence": "medium"
+  },
+  "531638": {
+    "nse_symbol": "SURAJEST",
+    "bse_company_name": "Suraj Ltd",
+    "nse_company_name": "SURAJEST",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "531638",
+    "confidence": "low"
+  },
+  "531761": {
+    "nse_symbol": "APOLLOFI",
+    "bse_company_name": "Apollo Pipes Ltd",
+    "nse_company_name": "APOLLOFI",
+    "match_score": 0.7,
+    "source": "fuzzy_match",
+    "bse_code": "531761",
+    "confidence": "low"
+  },
+  "531768": {
+    "nse_symbol": "POLYMED",
+    "bse_company_name": "Poly Medicure Ltd",
+    "nse_company_name": "POLYMED",
+    "match_score": 0.7,
+    "source": "fuzzy_match",
+    "bse_code": "531768",
+    "confidence": "low"
+  },
+  "531795": {
+    "nse_symbol": "ATULAUTO",
+    "bse_company_name": "Atul Auto Ltd",
+    "nse_company_name": "ATULAUTO",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "531795",
+    "confidence": "high"
+  },
+  "531928": {
+    "nse_symbol": "GOLDENCREST",
+    "bse_company_name": "Golden Carpets Ltd",
+    "nse_company_name": "GOLDENCREST",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "531928",
+    "confidence": "medium"
+  },
+  "532123": {
+    "nse_symbol": "BSELALGO",
+    "bse_company_name": "BSEL Algo Ltd",
+    "nse_company_name": "BSELALGO",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "532123",
+    "confidence": "high"
+  },
+  "532144": {
+    "nse_symbol": "WELSPUNLIV",
+    "bse_company_name": "Welspun Corp Ltd",
+    "nse_company_name": "WELSPUNLIV",
+    "match_score": 0.8235294117647058,
+    "source": "fuzzy_match",
+    "bse_code": "532144",
+    "confidence": "medium"
+  },
+  "532149": {
+    "nse_symbol": "532149",
+    "bse_company_name": "Bank of India",
+    "nse_company_name": "Bank of India",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "532149",
+    "confidence": "high"
+  },
+  "532167": {
+    "nse_symbol": "OMKARCHEM-BZ",
+    "bse_company_name": "Omkar Pharmachem Ltd",
+    "nse_company_name": "OMKARCHEM",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "532167",
+    "confidence": "low"
+  },
+  "532172": {
+    "nse_symbol": "ADROITINFO",
+    "bse_company_name": "Adroit Infotech Ltd",
+    "nse_company_name": "ADROITINFO",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "532172",
+    "confidence": "medium"
+  },
+  "532286": {
+    "nse_symbol": "500378",
+    "bse_company_name": "Jindal Steel Ltd",
+    "nse_company_name": "Jindal Saw Ltd",
+    "match_score": 0.7272727272727273,
+    "source": "fuzzy_match",
+    "bse_code": "532286",
+    "confidence": "low"
+  },
+  "532300": {
+    "nse_symbol": "WOCKPHARMA",
+    "bse_company_name": "Wockhardt Ltd",
+    "nse_company_name": "WOCKPHARMA",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "532300",
+    "confidence": "low"
+  },
+  "532343": {
+    "nse_symbol": "TVSMOTOR",
+    "bse_company_name": "TVS Motor Company Ltd",
+    "nse_company_name": "TVSMOTOR",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "532343",
+    "confidence": "high"
+  },
+  "532348": {
+    "nse_symbol": "SUBEXLTD",
+    "bse_company_name": "Subex Ltd",
+    "nse_company_name": "SUBEXLTD",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "532348",
+    "confidence": "low"
+  },
+  "532406": {
+    "nse_symbol": "AVANCE",
+    "bse_company_name": "Avantel Ltd",
+    "nse_company_name": "AVANCE",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "532406",
+    "confidence": "low"
+  },
+  "532454": {
+    "nse_symbol": "BHARTIARTL",
+    "bse_company_name": "Bharti Airtel Ltd",
+    "nse_company_name": "BHARTIARTL",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "532454",
+    "confidence": "medium"
+  },
+  "532460": {
+    "nse_symbol": "PONNIERODE",
+    "bse_company_name": "Ponni Sugars (Erode) Ltd",
+    "nse_company_name": "PONNIERODE",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "532460",
+    "confidence": "low"
+  },
+  "532475": {
+    "nse_symbol": "APTECHT",
+    "bse_company_name": "Aptech Ltd",
+    "nse_company_name": "APTECHT",
+    "match_score": 0.9230769230769231,
+    "source": "fuzzy_match",
+    "bse_code": "532475",
+    "confidence": "high"
+  },
+  "532539": {
+    "nse_symbol": "UNOMINDA",
+    "bse_company_name": "UNO Minda Ltd",
+    "nse_company_name": "UNOMINDA",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "532539",
+    "confidence": "high"
+  },
+  "532662": {
+    "nse_symbol": "HTMEDIA",
+    "bse_company_name": "HT Media Ltd",
+    "nse_company_name": "HTMEDIA",
+    "match_score": 0.9333333333333333,
+    "source": "fuzzy_match",
+    "bse_code": "532662",
+    "confidence": "high"
+  },
+  "532779": {
+    "nse_symbol": "TORNTPOWER",
+    "bse_company_name": "Torrent Power Ltd",
+    "nse_company_name": "TORNTPOWER",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "532779",
+    "confidence": "medium"
+  },
+  "532830": {
+    "nse_symbol": "ASAL",
+    "bse_company_name": "Astral Ltd",
+    "nse_company_name": "ASAL",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "532830",
+    "confidence": "medium"
+  },
+  "532977": {
+    "nse_symbol": "BAJAJ-AUTO",
+    "bse_company_name": "Bajaj Auto Ltd",
+    "nse_company_name": "BAJAJ-AUTO",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "532977",
+    "confidence": "high"
+  },
+  "532978": {
+    "nse_symbol": "BAJAJFINSV",
+    "bse_company_name": "Bajaj Finserv Ltd",
+    "nse_company_name": "BAJAJFINSV",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "532978",
+    "confidence": "medium"
+  },
+  "532992": {
+    "nse_symbol": "CHCL",
+    "bse_company_name": "CHL Ltd",
+    "nse_company_name": "CHCL",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "532992",
+    "confidence": "medium"
+  },
+  "533007": {
+    "nse_symbol": "LGBFORGE",
+    "bse_company_name": "LGB Forge Ltd",
+    "nse_company_name": "LGBFORGE",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "533007",
+    "confidence": "high"
+  },
+  "533095": {
+    "nse_symbol": "BENGALASM",
+    "bse_company_name": "Bengal & Assam Company Ltd",
+    "nse_company_name": "BENGALASM",
+    "match_score": 0.8571428571428571,
+    "source": "fuzzy_match",
+    "bse_code": "533095",
+    "confidence": "medium"
+  },
+  "533096": {
+    "nse_symbol": "ADANIPOWER",
+    "bse_company_name": "Adani Power Ltd",
+    "nse_company_name": "ADANIPOWER",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "533096",
+    "confidence": "high"
+  },
+  "533168": {
+    "nse_symbol": "ROSSELLIND",
+    "bse_company_name": "Rossell India Ltd",
+    "nse_company_name": "ROSSELLIND",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "533168",
+    "confidence": "medium"
+  },
+  "533278": {
+    "nse_symbol": "COALINDIA",
+    "bse_company_name": "Coal India Ltd",
+    "nse_company_name": "COALINDIA",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "533278",
+    "confidence": "high"
+  },
+  "533287": {
+    "nse_symbol": "ZEELEARN",
+    "bse_company_name": "Zee Learn Ltd",
+    "nse_company_name": "ZEELEARN",
+    "match_score": 0.9411764705882353,
+    "source": "fuzzy_match",
+    "bse_code": "533287",
+    "confidence": "high"
+  },
+  "533758": {
+    "nse_symbol": "APLAPOLLO",
+    "bse_company_name": "APL Apollo Tubes Ltd",
+    "nse_company_name": "APLAPOLLO",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "533758",
+    "confidence": "low"
+  },
+  "534328": {
+    "nse_symbol": "HEXATRADEX",
+    "bse_company_name": "Hexa Tradex Ltd",
+    "nse_company_name": "HEXATRADEX",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "534328",
+    "confidence": "high"
+  },
+  "534816": {
+    "nse_symbol": "INDUSTOWER",
+    "bse_company_name": "Indus Towers Ltd",
+    "nse_company_name": "INDUSTOWER",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "534816",
+    "confidence": "high"
+  },
+  "535267": {
+    "nse_symbol": "COMFINCAP",
+    "bse_company_name": "Comfort Fincap Ltd",
+    "nse_company_name": "COMFINCAP",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "535267",
+    "confidence": "low"
+  },
+  "535958": {
+    "nse_symbol": "INTEGRAEN",
+    "bse_company_name": "Integra Essentia Ltd",
+    "nse_company_name": "INTEGRAEN",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "535958",
+    "confidence": "low"
+  },
+  "537820": {
+    "nse_symbol": "VIJIFIN",
+    "bse_company_name": "Viji Finance Ltd",
+    "nse_company_name": "VIJIFIN",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "537820",
+    "confidence": "low"
+  },
+  "538564": {
+    "nse_symbol": "JAMESWARREN",
+    "bse_company_name": "James Warren Tea Ltd",
+    "nse_company_name": "JAMESWARREN",
+    "match_score": 0.8148148148148148,
+    "source": "fuzzy_match",
+    "bse_code": "538564",
+    "confidence": "medium"
+  },
+  "538666": {
+    "nse_symbol": "SHARDACROP",
+    "bse_company_name": "Sharda Cropchem Ltd",
+    "nse_company_name": "SHARDACROP",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "538666",
+    "confidence": "medium"
+  },
+  "538777": {
+    "nse_symbol": "ASIACAP",
+    "bse_company_name": "Asia Capital Ltd",
+    "nse_company_name": "ASIACAP",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "538777",
+    "confidence": "low"
+  },
+  "538817": {
+    "nse_symbol": "CAPPIPES",
+    "bse_company_name": "Captain Pipes Ltd",
+    "nse_company_name": "CAPPIPES",
+    "match_score": 0.7619047619047619,
+    "source": "fuzzy_match",
+    "bse_code": "538817",
+    "confidence": "low"
+  },
+  "539224": {
+    "nse_symbol": "HCKKVENTURE",
+    "bse_company_name": "HCKK Ventures Ltd",
+    "nse_company_name": "HCKKVENTURE",
+    "match_score": 0.9166666666666666,
+    "source": "fuzzy_match",
+    "bse_code": "539224",
+    "confidence": "high"
+  },
+  "539437": {
+    "nse_symbol": "IDFCFIRSTB",
+    "bse_company_name": "IDFC First Bank Ltd",
+    "nse_company_name": "IDFCFIRSTB",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "539437",
+    "confidence": "medium"
+  },
+  "539574": {
+    "nse_symbol": "531433",
+    "bse_company_name": "Sunshine Capital Ltd",
+    "nse_company_name": "Sungold Capital",
+    "match_score": 0.7096774193548387,
+    "source": "fuzzy_match",
+    "bse_code": "539574",
+    "confidence": "low"
+  },
+  "539872": {
+    "nse_symbol": "539872",
+    "bse_company_name": "Bajaj Healthcare Ltd",
+    "nse_company_name": "Bajaj Healthcare Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "539872",
+    "confidence": "high"
+  },
+  "539889": {
+    "nse_symbol": "PARAGMILK",
+    "bse_company_name": "Parag Milk Foods Ltd",
+    "nse_company_name": "PARAGMILK",
+    "match_score": 0.72,
+    "source": "fuzzy_match",
+    "bse_code": "539889",
+    "confidence": "low"
+  },
+  "540097": {
+    "nse_symbol": "GAMCO",
+    "bse_company_name": "Gamco Ltd",
+    "nse_company_name": "GAMCO",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "540097",
+    "confidence": "high"
+  },
+  "540115": {
+    "nse_symbol": "540115",
+    "bse_company_name": "L&T Technology Services Ltd",
+    "nse_company_name": "L&T Technology Services Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "540115",
+    "confidence": "high"
+  },
+  "540212": {
+    "nse_symbol": "TCIEXP",
+    "bse_company_name": "TCI Express Ltd",
+    "nse_company_name": "TCIEXP",
+    "match_score": 0.7058823529411765,
+    "source": "fuzzy_match",
+    "bse_code": "540212",
+    "confidence": "low"
+  },
+  "540403": {
+    "nse_symbol": "CLEDUCATE",
+    "bse_company_name": "CL Educate Ltd",
+    "nse_company_name": "CLEDUCATE",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "540403",
+    "confidence": "high"
+  },
+  "540611": {
+    "nse_symbol": "540611",
+    "bse_company_name": "AU Small Finance Bank Ltd",
+    "nse_company_name": "AU Small Finance Bank Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "540611",
+    "confidence": "high"
+  },
+  "540613": {
+    "nse_symbol": "540936",
+    "bse_company_name": "Gautam Exim Ltd",
+    "nse_company_name": "Gautam Gems Ltd",
+    "match_score": 0.8181818181818182,
+    "source": "fuzzy_match",
+    "bse_code": "540613",
+    "confidence": "medium"
+  },
+  "540699": {
+    "nse_symbol": "540699",
+    "bse_company_name": "Dixon Technologies (India) Ltd",
+    "nse_company_name": "Dixon Technologies (India) Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "540699",
+    "confidence": "high"
+  },
+  "540743": {
+    "nse_symbol": "GODREJAGRO",
+    "bse_company_name": "Godrej Agrovet Ltd",
+    "nse_company_name": "GODREJAGRO",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "540743",
+    "confidence": "medium"
+  },
+  "540923": {
+    "nse_symbol": "ASHOKAMET",
+    "bse_company_name": "Ashoka Metcast Ltd",
+    "nse_company_name": "ASHOKAMET",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "540923",
+    "confidence": "low"
+  },
+  "540936": {
+    "nse_symbol": "540936",
+    "bse_company_name": "Gautam Gems Ltd",
+    "nse_company_name": "Gautam Gems Ltd",
+    "match_score": 1.0,
+    "source": "exact_match",
+    "bse_code": "540936",
+    "confidence": "high"
+  },
+  "541153": {
+    "nse_symbol": "BANDHANBNK",
+    "bse_company_name": "Bandhan Bank Ltd",
+    "nse_company_name": "BANDHANBNK",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "541153",
+    "confidence": "high"
+  },
+  "542333": {
+    "nse_symbol": "RPSGVENT",
+    "bse_company_name": "RPSG Ventures Ltd",
+    "nse_company_name": "RPSGVENT",
+    "match_score": 0.7619047619047619,
+    "source": "fuzzy_match",
+    "bse_code": "542333",
+    "confidence": "low"
+  },
+  "543252": {
+    "nse_symbol": "FAIRCHEMOR",
+    "bse_company_name": "Fairchem Organics Ltd",
+    "nse_company_name": "FAIRCHEMOR",
+    "match_score": 0.7407407407407407,
+    "source": "fuzzy_match",
+    "bse_code": "543252",
+    "confidence": "low"
+  },
+  "543260": {
+    "nse_symbol": "STOVEKRAFT",
+    "bse_company_name": "Stove Kraft Ltd",
+    "nse_company_name": "STOVEKRAFT",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "543260",
+    "confidence": "high"
+  },
+  "543325": {
+    "nse_symbol": "ROLEXRINGS",
+    "bse_company_name": "Rolex Rings Ltd",
+    "nse_company_name": "ROLEXRINGS",
+    "match_score": 0.9523809523809523,
+    "source": "fuzzy_match",
+    "bse_code": "543325",
+    "confidence": "high"
+  },
+  "543482": {
+    "nse_symbol": "EUREKAFORB",
+    "bse_company_name": "Eureka Forbes Ltd",
+    "nse_company_name": "EUREKAFORB",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "543482",
+    "confidence": "medium"
+  },
+  "543532": {
+    "nse_symbol": "ETHOSLTD",
+    "bse_company_name": "Ethos Ltd",
+    "nse_company_name": "ETHOSLTD",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "543532",
+    "confidence": "low"
+  },
+  "543743": {
+    "nse_symbol": "AERONEU",
+    "bse_company_name": "Aeroflex Neu Ltd",
+    "nse_company_name": "AERONEU",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "543743",
+    "confidence": "low"
+  },
+  "543748": {
+    "nse_symbol": "AARTIPHARM",
+    "bse_company_name": "Aarti Pharmalabs Ltd",
+    "nse_company_name": "AARTIPHARM",
+    "match_score": 0.7692307692307693,
+    "source": "fuzzy_match",
+    "bse_code": "543748",
+    "confidence": "low"
+  },
+  "543918": {
+    "nse_symbol": "GHCLTEXTIL",
+    "bse_company_name": "GHCL Textiles Ltd",
+    "nse_company_name": "GHCLTEXTIL",
+    "match_score": 0.8695652173913043,
+    "source": "fuzzy_match",
+    "bse_code": "543918",
+    "confidence": "medium"
+  },
+  "543928": {
+    "nse_symbol": "COSMICCRF",
+    "bse_company_name": "Cosmic CRF Ltd",
+    "nse_company_name": "COSMICCRF",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "543928",
+    "confidence": "high"
+  },
+  "543938": {
+    "nse_symbol": "ACCELERATE",
+    "bse_company_name": "Acceleratebs India Ltd",
+    "nse_company_name": "ACCELERATE",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "543938",
+    "confidence": "low"
+  },
+  "544057": {
+    "nse_symbol": "HAPPYFORGE",
+    "bse_company_name": "Happy Forgings Ltd",
+    "nse_company_name": "HAPPYFORGE",
+    "match_score": 0.75,
+    "source": "fuzzy_match",
+    "bse_code": "544057",
+    "confidence": "low"
+  },
+  "544060": {
+    "nse_symbol": "RBZJEWEL",
+    "bse_company_name": "RBZ Jewellers Ltd",
+    "nse_company_name": "RBZJEWEL",
+    "match_score": 0.7619047619047619,
+    "source": "fuzzy_match",
+    "bse_code": "544060",
+    "confidence": "low"
+  },
+  "544066": {
+    "nse_symbol": "SUNDARMFIN",
+    "bse_company_name": "Sundaram",
+    "nse_company_name": "SUNDARMFIN",
+    "match_score": 0.7777777777777778,
+    "source": "fuzzy_match",
+    "bse_code": "544066",
+    "confidence": "low"
+  },
+  "544067": {
+    "nse_symbol": "INNOVACAP",
+    "bse_company_name": "Innova Captab Ltd",
+    "nse_company_name": "INNOVACAP",
+    "match_score": 0.8181818181818182,
+    "source": "fuzzy_match",
+    "bse_code": "544067",
+    "confidence": "medium"
+  },
+  "544131": {
+    "nse_symbol": "GPTHEALTH",
+    "bse_company_name": "GPT Healthcare Ltd",
+    "nse_company_name": "GPTHEALTH",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "544131",
+    "confidence": "low"
+  },
+  "544162": {
+    "nse_symbol": "BHARTIHEXA",
+    "bse_company_name": "Bharti Hexacom Ltd",
+    "nse_company_name": "BHARTIHEXA",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "544162",
+    "confidence": "medium"
+  },
+  "544174": {
+    "nse_symbol": "TBOTEK",
+    "bse_company_name": "TBO TEK Ltd",
+    "nse_company_name": "TBOTEK",
+    "match_score": 0.9230769230769231,
+    "source": "fuzzy_match",
+    "bse_code": "544174",
+    "confidence": "high"
+  },
+  "544213": {
+    "nse_symbol": "544213",
+    "bse_company_name": "Aelea Commodities Ltd",
+    "nse_company_name": "Aelea Commoditi.",
+    "match_score": 0.9375,
+    "source": "fuzzy_match",
+    "bse_code": "544213",
+    "confidence": "high"
+  },
+  "544240": {
+    "nse_symbol": "RAYMONDLSL",
+    "bse_company_name": "Raymond Lifestyle Ltd",
+    "nse_company_name": "RAYMONDLSL",
+    "match_score": 0.7407407407407407,
+    "source": "fuzzy_match",
+    "bse_code": "544240",
+    "confidence": "low"
+  },
+  "544288": {
+    "nse_symbol": "BLACKBUCK",
+    "bse_company_name": "Black Buck Ltd",
+    "nse_company_name": "BLACKBUCK",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "544288",
+    "confidence": "high"
+  },
+  "544317": {
+    "nse_symbol": "TRANSRAILL",
+    "bse_company_name": "Transrail Lighting Ltd",
+    "nse_company_name": "TRANSRAILL",
+    "match_score": 0.7142857142857143,
+    "source": "fuzzy_match",
+    "bse_code": "544317",
+    "confidence": "low"
+  },
+  "544325": {
+    "nse_symbol": "ITCHOTELS",
+    "bse_company_name": "ITC Hotels Ltd",
+    "nse_company_name": "ITCHOTELS",
+    "match_score": 0.9473684210526315,
+    "source": "fuzzy_match",
+    "bse_code": "544325",
+    "confidence": "high"
+  },
+  "544395": {
+    "nse_symbol": "STLNETWORK",
+    "bse_company_name": "STL Networks Ltd",
+    "nse_company_name": "STLNETWORK",
+    "match_score": 0.9090909090909091,
+    "source": "fuzzy_match",
+    "bse_code": "544395",
+    "confidence": "high"
+  },
+  "544420": {
+    "nse_symbol": "RAYMONDREL",
+    "bse_company_name": "Raymond Realty Ltd",
+    "nse_company_name": "RAYMONDREL",
+    "match_score": 0.8333333333333334,
+    "source": "fuzzy_match",
+    "bse_code": "544420",
+    "confidence": "medium"
+  },
+  "544442": {
+    "nse_symbol": "CHEMKART",
+    "bse_company_name": "Chemkart India Ltd",
+    "nse_company_name": "CHEMKART",
+    "match_score": 0.7272727272727273,
+    "source": "fuzzy_match",
+    "bse_code": "544442",
+    "confidence": "low"
+  },
+  "544574": {
+    "nse_symbol": "TATACAP",
+    "bse_company_name": "Tata Capital Ltd",
+    "nse_company_name": "TATACAP",
+    "match_score": 0.7368421052631579,
+    "source": "fuzzy_match",
+    "bse_code": "544574",
+    "confidence": "low"
+  },
+  "590005": {
+    "nse_symbol": "VEDL",
+    "bse_company_name": "Veedol Corporation Ltd",
+    "nse_company_name": "VEDL",
+    "match_score": 0.8,
+    "source": "fuzzy_match",
+    "bse_code": "590005",
+    "confidence": "medium"
+  },
+  "590021": {
+    "nse_symbol": "BHARATRAS",
+    "bse_company_name": "Bharat Rasayan Ltd",
+    "nse_company_name": "BHARATRAS",
+    "match_score": 0.782608695652174,
+    "source": "fuzzy_match",
+    "bse_code": "590021",
+    "confidence": "low"
+  }
+}

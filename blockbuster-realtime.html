@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Blockbuster Scanner - VCP Trading System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            min-height: 100vh;
+            color: #e0e6ed;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 20px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #64ffda;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #64ffda;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #8892b0;
+            margin-top: 5px;
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        input[type="range"] {
+            width: 150px;
+        }
+
+        .score-display {
+            padding: 5px 10px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 4px;
+            color: #667eea;
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .card.new-blockbuster {
+            border-color: #64ffda;
+            animation: highlight 2s ease-out;
+        }
+
+        @keyframes highlight {
+            0% {
+                box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px 10px rgba(100, 255, 218, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .company-info h3 {
+            font-size: 1.2rem;
+            color: #e0e6ed;
+            margin-bottom: 5px;
+        }
+
+        .codes {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .code {
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #8892b0;
+        }
+
+        .score-badge {
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .score-perfect {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(240, 147, 251, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(240, 147, 251, 0.8); }
+        }
+
+        .score-high {
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: white;
+        }
+
+        .score-medium {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            color: white;
+        }
+
+        .timestamp {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #8892b0;
+        }
+
+        .time-ago {
+            color: #64ffda;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #8892b0;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #8892b0;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ccd6f6;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s ease-out;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>🎯 Real-time Blockbuster Scanner</h1>
+                <p style="color: #8892b0; margin-top: 5px;">Live detection from earnings announcements</p>
+            </div>
+            <div class="live-indicator">
+                <span class="live-dot"></span>
+                <span style="color: #64ffda; font-weight: 600;">LIVE</span>
+                <span style="color: #8892b0; font-size: 0.9rem;" id="last-update">Updating...</span>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="total-blockbusters">0</div>
+                    <div class="stat-label">Blockbusters</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="avg-score">0</div>
+                    <div class="stat-label">Avg Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="new-today">0</div>
+                    <div class="stat-label">Today</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-group">
+                <span class="filter-label">Min Score:</span>
+                <input type="range" id="score-filter" min="50" max="100" value="70" step="5">
+                <span class="score-display" id="score-value">70</span>
+            </div>
+            <button onclick="loadBlockbusters()" id="refresh-btn">
+                <span>🔄</span>
+                <span>Refresh Now</span>
+            </button>
+            <button onclick="toggleAutoRefresh()" id="auto-refresh-btn">
+                <span>⚡</span>
+                <span id="auto-refresh-text">Auto-refresh: ON</span>
+            </button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Scanning for real-time blockbusters...</p>
+        </div>
+
+        <div id="blockbusters-grid" class="grid">
+        </div>
+
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <h3>No Blockbusters Found</h3>
+            <p>Adjust the minimum score or wait for new announcements.</p>
+            <p style="margin-top: 10px; color: #64ffda;">Auto-refreshing every 30 seconds...</p>
+        </div>
+    </div>
+
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script>
+        const API_URL = 'http://13.200.109.29:8001/api/announcements/screener';
+        let allBlockbusters = [];
+        let displayedBlockbusters = [];
+        let minScore = 70;
+        let autoRefreshEnabled = true;
+        let refreshInterval;
+        let lastSeenId = null;
+
+        // Format time ago
+        function timeAgo(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const seconds = Math.floor((now - date) / 1000);
+
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return Math.floor(seconds / 60) + ' min ago';
+            if (seconds < 86400) return Math.floor(seconds / 3600) + ' hours ago';
+            return Math.floor(seconds / 86400) + ' days ago';
+        }
+
+        // Get score badge class
+        function getScoreBadgeClass(score) {
+            if (score === 100) return 'score-perfect';
+            if (score >= 85) return 'score-high';
+            if (score >= 70) return 'score-medium';
+            return '';
+        }
+
+        // Show notification
+        function showNotification(text) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notification-text');
+
+            notificationText.textContent = text;
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Create blockbuster card
+        function createBlockbusterCard(item, isNew = false) {
+            const scoreClass = getScoreBadgeClass(item.blockbuster_score);
+            const cardClass = isNew ? 'card new-blockbuster' : 'card';
+
+            return `
+                <div class="${cardClass}" data-id="${item.id}">
+                    <div class="card-header">
+                        <div class="company-info">
+                            <h3>${item.company_name}</h3>
+                            <div class="codes">
+                                ${item.bse_code ? `<span class="code">BSE: ${item.bse_code}</span>` : ''}
+                                ${item.nse_symbol ? `<span class="code">NSE: ${item.nse_symbol}</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="score-badge ${scoreClass}">
+                            ${item.blockbuster_score}
+                        </div>
+                    </div>
+
+                    <div class="timestamp">
+                        <span>📅 ${new Date(item.received_timestamp).toLocaleDateString()}</span>
+                        <span class="time-ago">⏰ ${timeAgo(item.received_timestamp)}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Display blockbusters
+        function displayBlockbusters(blockbusters, hasNewItems = false) {
+            const grid = document.getElementById('blockbusters-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            if (blockbusters.length === 0) {
+                grid.style.display = 'none';
+                emptyState.style.display = 'block';
+            } else {
+                grid.style.display = 'grid';
+                emptyState.style.display = 'none';
+
+                // Sort by timestamp (newest first)
+                blockbusters.sort((a, b) => new Date(b.received_timestamp) - new Date(a.received_timestamp));
+
+                // Check for new items
+                const newItems = [];
+                if (lastSeenId) {
+                    blockbusters.forEach(item => {
+                        if (item.id > lastSeenId) {
+                            newItems.push(item.id);
+                        }
+                    });
+                }
+
+                grid.innerHTML = blockbusters.map(b =>
+                    createBlockbusterCard(b, newItems.includes(b.id))
+                ).join('');
+
+                // Update last seen ID
+                if (blockbusters.length > 0) {
+                    lastSeenId = Math.max(...blockbusters.map(b => b.id));
+                }
+
+                // Show notification for new blockbusters
+                if (newItems.length > 0 && hasNewItems) {
+                    showNotification(`🚀 ${newItems.length} new blockbuster${newItems.length > 1 ? 's' : ''} detected!`);
+                }
+            }
+
+            // Update stats
+            updateStats(blockbusters);
+        }
+
+        // Update statistics
+        function updateStats(blockbusters) {
+            document.getElementById('total-blockbusters').textContent = blockbusters.length;
+
+            if (blockbusters.length > 0) {
+                const avgScore = blockbusters.reduce((sum, b) => sum + b.blockbuster_score, 0) / blockbusters.length;
+                document.getElementById('avg-score').textContent = avgScore.toFixed(1);
+
+                // Count today's blockbusters
+                const today = new Date().toDateString();
+                const todayCount = blockbusters.filter(b =>
+                    new Date(b.received_timestamp).toDateString() === today
+                ).length;
+                document.getElementById('new-today').textContent = todayCount;
+            } else {
+                document.getElementById('avg-score').textContent = '0';
+                document.getElementById('new-today').textContent = '0';
+            }
+
+            // Update last update time
+            const now = new Date();
+            document.getElementById('last-update').textContent =
+                now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Load blockbusters from API
+        async function loadBlockbusters(showLoading = true) {
+            const btn = document.getElementById('refresh-btn');
+            const loading = document.getElementById('loading');
+
+            if (showLoading) {
+                btn.disabled = true;
+                loading.style.display = 'block';
+                document.getElementById('blockbusters-grid').style.display = 'none';
+                document.getElementById('empty-state').style.display = 'none';
+            }
+
+            try {
+                // Fetch earnings announcements
+                const response = await fetch(`${API_URL}?alert_type=EARNINGS&limit=1000`);
+                const data = await response.json();
+
+                // Filter for blockbusters with score >= minScore
+                const items = data.items || [];
+                allBlockbusters = items.filter(item =>
+                    item.blockbuster_score && item.blockbuster_score >= minScore
+                );
+
+                const hasNewItems = lastSeenId !== null &&
+                    allBlockbusters.some(item => item.id > lastSeenId);
+
+                displayBlockbusters(allBlockbusters, hasNewItems);
+
+            } catch (error) {
+                console.error('Error loading blockbusters:', error);
+                document.getElementById('empty-state').style.display = 'block';
+                document.getElementById('empty-state').innerHTML = `
+                    <h3>Error Loading Data</h3>
+                    <p style="color: #ff6b6b;">Failed to connect to the server. Retrying...</p>
+                `;
+            } finally {
+                if (showLoading) {
+                    loading.style.display = 'none';
+                    btn.disabled = false;
+                }
+            }
+        }
+
+        // Toggle auto-refresh
+        function toggleAutoRefresh() {
+            autoRefreshEnabled = !autoRefreshEnabled;
+            const btn = document.getElementById('auto-refresh-btn');
+            const text = document.getElementById('auto-refresh-text');
+
+            if (autoRefreshEnabled) {
+                text.textContent = 'Auto-refresh: ON';
+                startAutoRefresh();
+            } else {
+                text.textContent = 'Auto-refresh: OFF';
+                stopAutoRefresh();
+            }
+        }
+
+        // Start auto-refresh
+        function startAutoRefresh() {
+            if (refreshInterval) clearInterval(refreshInterval);
+            refreshInterval = setInterval(() => {
+                if (autoRefreshEnabled) {
+                    loadBlockbusters(false); // Don't show loading spinner for auto-refresh
+                }
+            }, 30000); // Refresh every 30 seconds
+        }
+
+        // Stop auto-refresh
+        function stopAutoRefresh() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+                refreshInterval = null;
+            }
+        }
+
+        // Score filter change
+        document.getElementById('score-filter').addEventListener('input', function() {
+            minScore = parseInt(this.value);
+            document.getElementById('score-value').textContent = minScore;
+
+            // Re-filter the data
+            const filtered = allBlockbusters.filter(b => b.blockbuster_score >= minScore);
+            displayBlockbusters(filtered, false);
+        });
+
+        // Load on page load
+        window.addEventListener('load', () => {
+            loadBlockbusters();
+            startAutoRefresh();
+        });
+
+        // Stop auto-refresh when page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else if (autoRefreshEnabled) {
+                loadBlockbusters();
+                startAutoRefresh();
+            }
+        });
+    </script>
+</body>
+</html>
