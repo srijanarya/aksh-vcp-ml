@@ -1,1 +1,143 @@
+# ============================================
+# VCP Financial Research System - .gitignore
+# ============================================
+
+# Virtual Environments
 .venv/
+venv/
+venv_*/
+env/
+ENV/
+
+# ============================================
+# SECURITY: Environment & Secrets
+# ============================================
+.env
+.env.*
+!.env.*.template
+!.env.example
+*secret*
+*credentials*
+*_key.json
+*.key
+*.pem
+*api_key*
+*password*
+configure_aws_api_keys.sh
+
+# ============================================
+# DATABASES (Proprietary Trading Data)
+# ============================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+data/*.db
+data/cache/
+data/features/
+
+# Specific databases with sensitive data
+data/historical_financials.db
+data/ml_collection_status.db
+data/ml_monitoring.db
+data/ohlcv_cache.db
+data/upper_circuit_labels.db
+data/vcp_trading_local.db
+trading_signals.db
+
+# ============================================
+# LOGS & CACHE
+# ============================================
+logs/
+*.log
+*.log.*
+/tmp/
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ============================================
+# ML MODELS (Large Files)
+# ============================================
+models/
+*.pkl
+*.pickle
+*.h5
+*.pt
+*.pth
+*.onnx
+*.joblib
+
+# ============================================
+# REPORTS & OUTPUTS (Proprietary Analysis)
+# ============================================
+scan_reports/
+validation_output/
+paper_trading/
+
+# CSV files (exclude reference data)
+*.csv
+!bse_list_of_companies.csv
+!nse_equity_list.csv
+!requirements*.txt
+data/extraction_failures.csv
+data/incomplete_price_data.csv
+data/mapping_validation_*.csv
+data/unmapped_companies.csv
+nsdl_isin_data.csv
+
+# ============================================
+# COVERAGE & TESTING
+# ============================================
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+*.cover
+.hypothesis/
+
+# ============================================
+# IDE & EDITORS
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# ============================================
+# PYTHON BUILD
+# ============================================
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+*.tmp
+*.temp
+*.bak
+*.backup
+.executing_shorts.txt
+
+# ============================================
+# BMAD v6 (Large proprietary system)
+# ============================================
+bmad_v6/
+
+# ============================================
+# WEB DASHBOARD (if contains sensitive configs)
+# ============================================
+# Uncomment if dashboard has sensitive data
+# web/config.json
+# web/.env.local
