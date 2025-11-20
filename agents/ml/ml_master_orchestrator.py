@@ -135,9 +135,15 @@ class MLMasterOrchestrator:
     def data_collector(self):
         """Lazy load MLDataCollectorAgent"""
         if self._data_collector is None:
-            from .ml_data_collector import MLDataCollectorAgent
-            self._data_collector = MLDataCollectorAgent(
+            from .ml_data_collector import MLDataCollectorAgent, CollectionConfig
+            
+            # Create config from orchestrator config
+            collector_config = CollectionConfig(
                 db_base_path=self.config.db_base_path
+            )
+            
+            self._data_collector = MLDataCollectorAgent(
+                config=collector_config
             )
         return self._data_collector
 
@@ -207,6 +213,7 @@ class MLMasterOrchestrator:
 
     def orchestrate_historical_data_collection(
         self,
+        bse_codes: List[str] = None,
         start_date: str = "2022-01-01",
         end_date: str = "2025-11-13"
     ) -> OrchestrationReport:
@@ -221,6 +228,7 @@ class MLMasterOrchestrator:
         5. Validate data quality (DataQualityValidator)
 
         Args:
+            bse_codes: List of BSE codes to collect data for (default: None, uses internal list)
             start_date: Start of date range (YYYY-MM-DD)
             end_date: End of date range (YYYY-MM-DD)
 
@@ -229,7 +237,7 @@ class MLMasterOrchestrator:
 
         Example:
             >>> orchestrator = MLMasterOrchestrator()
-            >>> report = orchestrator.orchestrate_historical_data_collection()
+            >>> report = orchestrator.orchestrate_historical_data_collection(bse_codes=["500325"])
             >>> print(f"Data collection: {report.success_rate:.1%} success")
         """
         run_start = datetime.now()
@@ -237,6 +245,11 @@ class MLMasterOrchestrator:
 
         logger.info(f"Starting historical data collection orchestration: {self.current_run_id}")
         logger.info(f"Date range: {start_date} to {end_date}")
+        
+        # Default BSE codes if not provided (Top 5 for demo)
+        if not bse_codes:
+            bse_codes = ["500325", "532540", "500209", "500180", "532174"]
+            logger.info(f"Using default BSE codes: {bse_codes}")
 
         task_results = []
 
@@ -245,6 +258,7 @@ class MLMasterOrchestrator:
         try:
             logger.info("Task 1/5: Collecting all historical data...")
             collection_report = self.data_collector.collect_all_data(
+                bse_codes=bse_codes,
                 start_date=start_date,
                 end_date=end_date
             )
@@ -332,18 +346,143 @@ class MLMasterOrchestrator:
             >>> if report.success_rate == 1.0:
             ...     print("Model ready for deployment")
         """
-        # Implementation follows same pattern as data collection
-        # Delegates to feature_engineer.engineer_batch_features()
-        # Then to training_agent.train_xgboost(), etc.
-        # Then to backtesting_agent.backtest_model()
+        run_start = datetime.now()
+        self.current_run_id = f"training_{run_start.strftime('%Y%m%d_%H%M%S')}"
+        
+        logger.info(f"Starting training pipeline orchestration: {self.current_run_id}")
+        task_results = []
+        
+        try:
+            # Task 1: Feature Engineering
+            task_start = datetime.now()
+            logger.info("Task 1/4: Engineering features...")
+            
+            # Query labeled samples from the database
+            import sqlite3
+            labels_db = os.path.join(self.config.db_base_path, "upper_circuit_labels.db")
+            conn = sqlite3.connect(labels_db)
+            cursor = conn.cursor()
+            cursor.execute("SELECT DISTINCT bse_code, earnings_date FROM upper_circuit_labels")
+            rows = cursor.fetchall()
+            conn.close()
+            
+            # Convert to list of dicts with 'date' key (not 'earnings_date')
+            samples = [{"bse_code": row[0], "date": row[1]} for row in rows]
+            
+            logger.info(f"Extracting features for {len(samples)} labeled samples")
+            feature_stats = self.feature_engineer.engineer_batch_features(
+                samples,
+                feature_dbs={
+                    'price': 'data/price_movements.db',
+                    'technical': 'data/features/technical_features.db',
+                    'financial': 'data/features/financial_data.db',
+                    'financial_features': 'data/features/financial_features.db',
+                    'news': 'data/features/news_sentiment.db',
+                    'sentiment': 'data/features/sentiment_features.db',
+                    'historical': 'data/features/historical_patterns.db',
+                    'seasonality': 'data/features/seasonality_features.db',
+                    'fundamental': 'data/features/fundamental_features.db'
+                }
+            )
+            
+            task_duration = (datetime.now() - task_start).total_seconds()
+            task_results.append(TaskResult(
+                task_name="feature_engineering",
+                agent_name="MLFeatureEngineerAgent",
+                status="SUCCESS",
+                duration_seconds=task_duration,
+                output=feature_stats
+            ))
+            
+            # Task 2: Baseline Training
+            task_start = datetime.now()
+            logger.info("Task 2/4: Training baseline models...")
+            baseline_results = self.training_agent.train_baseline_models()
+            
+            task_duration = (datetime.now() - task_start).total_seconds()
+            task_results.append(TaskResult(
+                task_name="baseline_training",
+                agent_name="MLTrainingAgent",
+                status="SUCCESS",
+                duration_seconds=task_duration,
+                output=baseline_results
+            ))
+            
+            # Task 3: Advanced Training
+            task_start = datetime.now()
+            logger.info("Task 3/4: Training advanced models...")
+            advanced_results = self.training_agent.train_advanced_models()
+            
+            task_duration = (datetime.now() - task_start).total_seconds()
+            task_results.append(TaskResult(
+                task_name="advanced_training",
+                agent_name="MLTrainingAgent",
+                status="SUCCESS",
+                duration_seconds=task_duration,
+                output=advanced_results
+            ))
+            
+            # Task 4: Backtesting
+            task_start = datetime.now()
+            logger.info("Task 4/4: Backtesting champion model...")
+            
+            # Identify best model from advanced results
+            best_model_id = "xgboost_v1" # Placeholder, normally derived from advanced_results
+            
+            backtest_results = self.backtesting_agent.backtest_model(
+                model_id=best_model_id,
+                start_date="2024-01-01",
+                end_date="2024-03-31"
+            )
+            
+            task_duration = (datetime.now() - task_start).total_seconds()
+            task_results.append(TaskResult(
+                task_name="backtesting",
+                agent_name="MLBacktestingAgent",
+                status="SUCCESS",
+                duration_seconds=task_duration,
+                output=backtest_results
+            ))
+            
+        except Exception as e:
+            task_duration = (datetime.now() - task_start).total_seconds()
+            task_results.append(TaskResult(
+                task_name="training_pipeline_error",
+                agent_name="MLMasterOrchestrator",
+                status="FAILED",
+                duration_seconds=task_duration,
+                output=None,
+                error_message=str(e)
+            ))
+            logger.error(f"Training pipeline failed: {e}")
+            
+        # Generate orchestration report
+        run_end = datetime.now()
+        total_duration = (run_end - run_start).total_seconds()
 
-        logger.info("Training pipeline orchestration not yet implemented")
-        raise NotImplementedError("Epic 3: Training pipeline - Coming soon")
+        tasks_completed = sum(1 for r in task_results if r.status == "SUCCESS")
+        tasks_failed = sum(1 for r in task_results if r.status == "FAILED")
+        success_rate = tasks_completed / len(task_results) if task_results else 0.0
+        
+        next_action = "Deploy to production" if success_rate == 1.0 else "Investigate failures"
+
+        report = OrchestrationReport(
+            run_id=self.current_run_id,
+            start_time=run_start,
+            end_time=run_end,
+            total_duration_seconds=total_duration,
+            tasks_completed=tasks_completed,
+            tasks_failed=tasks_failed,
+            success_rate=success_rate,
+            task_results=task_results,
+            next_recommended_action=next_action
+        )
+        
+        logger.info(f"Training pipeline complete. Success rate: {success_rate:.1%}")
+        return report
 
     async def orchestrate_realtime_inference(self):
         """
-        Orchestrate real-time inference pipeline (Epic 4) - runs as daemon.
-
         Workflow:
         1. Listen for BSE Telegram alerts (MLInferenceAgent)
         2. On alert: Download PDF, extract features, predict

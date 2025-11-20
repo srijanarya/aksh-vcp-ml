@@ -69,6 +69,7 @@ WORKDIR /app
 COPY --chown=mluser:mluser agents/ ./agents/
 COPY --chown=mluser:mluser api/ ./api/
 COPY --chown=mluser:mluser tests/ ./tests/
+COPY --chown=mluser:mluser tools/ ./tools/
 
 # Copy data directory structure (empty, mounted at runtime)
 RUN mkdir -p data/models/registry data/features && \

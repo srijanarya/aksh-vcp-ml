@@ -122,11 +122,22 @@ class BaselineTrainer:
         if not features_dfs:
             raise ValueError("No features loaded from any database")
 
+        # Drop metadata columns that would cause duplicates during merge
+        metadata_cols = ['feature_id', 'created_at', 'sample_id', 'financial_id', 'sentiment_id']
+        
+        cleaned_dfs = []
+        for df in features_dfs:
+            # Keep only bse_code, date, and actual feature columns
+            cols_to_drop = [col for col in metadata_cols if col in df.columns]
+            if cols_to_drop:
+                df = df.drop(columns=cols_to_drop)
+            cleaned_dfs.append(df)
+
         # Start with first features dataframe
-        merged_features = features_dfs[0]
+        merged_features = cleaned_dfs[0]
 
         # Merge remaining features
-        for features_df in features_dfs[1:]:
+        for features_df in cleaned_dfs[1:]:
             merged_features = pd.merge(
                 merged_features,
                 features_df,
@@ -238,6 +249,10 @@ class BaselineTrainer:
             random_state=random_state,
             stratify=self.y  # Stratified split to preserve class distribution
         )
+        
+        # Handle NaN values by filling with 0 (simple imputation)
+        self.X_train = self.X_train.fillna(0)
+        self.X_test = self.X_test.fillna(0)
 
         logger.info(
             f"Split complete: train={len(self.X_train)}, test={len(self.X_test)}, "

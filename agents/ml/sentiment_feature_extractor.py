@@ -161,7 +161,7 @@ class SentimentFeatureExtractor:
 
         query = """
             SELECT date, open, high, low, close, volume
-            FROM historical_prices
+            FROM price_movements
             WHERE bse_code = ?
               AND date >= ?
               AND date <= ?

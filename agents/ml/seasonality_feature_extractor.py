@@ -234,12 +234,12 @@ class SeasonalityFeatureExtractor:
         conn = sqlite3.connect(self.labels_db_path)
 
         query = """
-            SELECT date, upper_circuit
+            SELECT earnings_date as date, label as upper_circuit
             FROM upper_circuit_labels
             WHERE bse_code = ?
-              AND date >= ?
-              AND date < ?
-            ORDER BY date ASC
+              AND earnings_date >= ?
+              AND earnings_date < ?
+            ORDER BY earnings_date ASC
         """
 
         df = pd.read_sql_query(

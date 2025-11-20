@@ -135,23 +135,35 @@ class AdvancedTrainer:
         if labels_df.empty:
             raise ValueError("No data loaded: labels database is empty")
 
-        # Step 2: Load features from each database
-        technical_df = self._load_features_from_db(self.technical_db_path, 'technical_features')
-        financial_df = self._load_features_from_db(self.financial_db_path, 'financial_features')
-        sentiment_df = self._load_features_from_db(self.sentiment_db_path, 'sentiment_features')
-        seasonality_df = self._load_features_from_db(self.seasonality_db_path, 'seasonality_features')
+        # Step 2: Load features from each DB
+        # Define mapping of DB path to table name
+        db_map = {
+            self.technical_db_path: 'technical_features',
+            self.financial_db_path: 'financial_features',
+            self.sentiment_db_path: 'sentiment_features',
+            self.seasonality_db_path: 'seasonality_features'
+        }
+        
+        cleaned_dfs = []
+        for db_path, table_name in db_map.items():
+            df = self._load_features_from_db(db_path, table_name)
+            if not df.empty:
+                # Drop feature_id if present to avoid merge conflicts
+                if 'feature_id' in df.columns:
+                    df = df.drop(columns=['feature_id'])
+                if 'created_at' in df.columns:
+                    df = df.drop(columns=['created_at'])
+                cleaned_dfs.append(df)
+        
+        if not cleaned_dfs:
+             raise ValueError("No feature data loaded from any database")
 
-        # Step 3: Merge all features
-        features_dfs = [df for df in [technical_df, financial_df, sentiment_df, seasonality_df] if not df.empty]
-
-        if not features_dfs:
-            raise ValueError("No features loaded from any database")
-
+        # Step 3: Merge features
         # Start with first features dataframe
-        merged_features = features_dfs[0]
+        merged_features = cleaned_dfs[0]
 
         # Merge remaining features
-        for features_df in features_dfs[1:]:
+        for features_df in cleaned_dfs[1:]:
             merged_features = pd.merge(
                 merged_features,
                 features_df,
@@ -169,6 +181,14 @@ class AdvancedTrainer:
 
         if data.empty:
             raise ValueError("No data after merging features with labels")
+        
+        # Convert all feature columns to numeric (handles 'object' dtype issues)
+        feature_cols = [col for col in data.columns if col not in ['bse_code', 'date', 'label']]
+        for col in feature_cols:
+            data[col] = pd.to_numeric(data[col], errors='coerce')
+        
+        # Fill NaN values with 0 (simple imputation)
+        data[feature_cols] = data[feature_cols].fillna(0)
 
         logger.info(f"Loaded {len(data)} samples with {len(merged_features.columns)-2} total features")
 
