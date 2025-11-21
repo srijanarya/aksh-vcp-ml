@@ -125,7 +125,46 @@ class MLMasterOrchestrator:
         self.circuit_breaker_active = False
         self.consecutive_failures = 0
 
+        # Initialize Memori for orchestrator-level memory
+        self._memori = None
+        self._initialize_memory()
+
         logger.info(f"MLMasterOrchestrator initialized with config: {self.config}")
+
+    # ============================================================================
+    # Memory Initialization
+    # ============================================================================
+
+    def _initialize_memory(self):
+        """Initialize Memori for orchestrator-level memory"""
+        try:
+            # Import memory configuration
+            import sys
+            sys.path.append('/Users/srijan/Desktop/aksh')
+            from src.memory import get_memori_instance, MemoriConfig
+
+            # Create orchestrator-specific memory instance
+            self._memori = get_memori_instance(
+                namespace=MemoriConfig.NAMESPACE_ORCHESTRATOR,
+                user_id="ml_master_orchestrator",
+                conscious_ingest=True,  # Remember core patterns and decisions
+                auto_ingest=True,       # Dynamic search for relevant past runs
+            )
+
+            if self._memori:
+                self._memori.enable()
+                logger.info("Memori memory system enabled for orchestrator")
+            else:
+                logger.warning("Memori not available - orchestrator running without memory")
+
+        except Exception as e:
+            logger.warning(f"Could not initialize Memori: {e}. Continuing without memory.")
+            self._memori = None
+
+    @property
+    def memori(self):
+        """Get Memori instance for memory operations"""
+        return self._memori
 
     # ============================================================================
     # Agent Lazy Loading (Avoid Circular Imports)
