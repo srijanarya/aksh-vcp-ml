@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -238,17 +239,44 @@
         }
 
         /* Icon backgrounds */
-        .icon-earnings { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .icon-ai { background: linear-gradient(135deg, #f093fb, #f5576c); }
-        .icon-scanner { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .icon-alerts { background: linear-gradient(135deg, #43e97b, #38f9d7); }
-        .icon-react { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .icon-research { background: linear-gradient(135deg, #fa709a, #fee140); }
-        .icon-history { background: linear-gradient(135deg, #ffd89b, #19547b); }
+        .icon-earnings {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .icon-ai {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .icon-scanner {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .icon-alerts {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .icon-react {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .icon-research {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .icon-history {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+        }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         .success-badge {
@@ -279,6 +307,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -314,17 +343,18 @@
                 </div>
                 <div class="dashboard-grid">
                     <!-- Earnings Calendar - WORKING -->
-                    <a href="http://13.200.109.29:8001/static/earnings_calendar_public.html" class="dashboard-card" target="_blank">
+                    <a href="http://13.200.109.29:8001/static/production/comprehensive_earnings_calendar.html"
+                        class="dashboard-card" target="_blank">
                         <span class="success-badge">LIVE</span>
                         <div class="card-header">
                             <div class="card-icon icon-earnings">📅</div>
                             <div class="card-title">
-                                <div class="card-name">Earnings Calendar</div>
-                                <div class="card-type">Public Access</div>
+                                <div class="card-name">Comprehensive Earnings Calendar</div>
+                                <div class="card-type">BSE Live + Historical</div>
                             </div>
                         </div>
                         <div class="card-description">
-                            Complete earnings calendar showing all 5,535 tracked companies with announcement dates and TBD status.
+                            Real-time schedule of forthcoming results from BSE combined with historical data.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-live">
@@ -341,12 +371,13 @@
                         <div class="card-header">
                             <div class="card-icon icon-scanner">🎯</div>
                             <div class="card-title">
-                                <div class="card-name">Blockbuster Scanner</div>
+                                <div class="card-name">Blockbuster & Top Performers Scanner</div>
                                 <div class="card-type">VCP Detection</div>
                             </div>
                         </div>
                         <div class="card-description">
-                            Real-time VCP pattern detection and blockbuster earnings identification system.
+                            Real-time VCP pattern detection, blockbuster identification, and top quarterly performers
+                            based on intelligence data.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-live">
@@ -380,7 +411,8 @@
                     </a>
 
                     <!-- Historical Alerts - WORKING -->
-                    <a href="http://13.200.109.29:8001/historical-alerts-dashboard" class="dashboard-card" target="_blank">
+                    <a href="http://13.200.109.29:8001/historical-alerts-dashboard" class="dashboard-card"
+                        target="_blank">
                         <span class="success-badge">LIVE</span>
                         <div class="card-header">
                             <div class="card-icon icon-history">📊</div>
@@ -390,7 +422,8 @@
                             </div>
                         </div>
                         <div class="card-description">
-                            Complete historical view of all alerts and announcements. Search, filter, and analyze past data.
+                            Complete historical view of all alerts and announcements. Search, filter, and analyze past
+                            data.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-live">
@@ -411,7 +444,8 @@
                 </div>
                 <div class="dashboard-grid">
                     <!-- Intelligent Earnings Collector - WORKING -->
-                    <a href="http://13.200.109.29:8001/docs#/Intelligent%20Collector" class="dashboard-card" target="_blank">
+                    <a href="http://13.200.109.29:8001/docs#/Intelligent%20Collector" class="dashboard-card"
+                        target="_blank">
                         <span class="success-badge">LIVE</span>
                         <div class="card-header">
                             <div class="card-icon icon-ai">🧠</div>
@@ -421,7 +455,31 @@
                             </div>
                         </div>
                         <div class="card-description">
-                            3-phase AI research system that automatically fills missing earnings data. Currently tracking 3,198 gaps.
+                            3-phase AI research system that automatically fills missing earnings data. Currently
+                            tracking 3,198 gaps.
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-status status-live">
+                                <span class="status-dot"></span>
+                                Live
+                            </div>
+                            <div class="card-action">→</div>
+                        </div>
+                    </a>
+
+                    <!-- Announcement Intelligence Dashboard - WORKING -->
+                    <a href="http://13.200.109.29:8001/static/production/intelligence_dashboard.html" class="dashboard-card"
+                        target="_blank">
+                        <span class="success-badge">LIVE</span>
+                        <div class="card-header">
+                            <div class="card-icon icon-intelligence">🎯</div>
+                            <div class="card-title">
+                                <div class="card-name">Announcement Intelligence Dashboard</div>
+                                <div class="card-type">AI Extraction & Analysis</div>
+                            </div>
+                        </div>
+                        <div class="card-description">
+                            Real-time BSE announcements with AI-powered intelligence extraction. Category breakdown, extraction status tracking, and intelligence data preview.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-live">
@@ -433,7 +491,8 @@
                     </a>
 
                     <!-- Dexter Agent -->
-                    <a href="#" class="dashboard-card" onclick="alert('Dexter Agent is being deployed. Check back soon!'); return false;">
+                    <a href="#" class="dashboard-card"
+                        onclick="alert('Dexter Agent is being deployed. Check back soon!'); return false;">
                         <div class="card-header">
                             <div class="card-icon icon-research">🔬</div>
                             <div class="card-title">
@@ -442,7 +501,8 @@
                             </div>
                         </div>
                         <div class="card-description">
-                            Advanced multi-agent financial research system with planning, action, validation, and answer agents.
+                            Advanced multi-agent financial research system with planning, action, validation, and answer
+                            agents.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-development">
@@ -454,7 +514,8 @@
                     </a>
 
                     <!-- Vikram Multi-Agent -->
-                    <a href="#" class="dashboard-card" onclick="alert('Vikram Multi-Agent is being deployed. Check back soon!'); return false;">
+                    <a href="#" class="dashboard-card"
+                        onclick="alert('Vikram Multi-Agent is being deployed. Check back soon!'); return false;">
                         <div class="card-header">
                             <div class="card-icon icon-research">⚡</div>
                             <div class="card-title">
@@ -463,7 +524,8 @@
                             </div>
                         </div>
                         <div class="card-description">
-                            Next-generation multi-agent trading system with specialized agents for technical, fundamental, and sentiment analysis.
+                            Next-generation multi-agent trading system with specialized agents for technical,
+                            fundamental, and sentiment analysis.
                         </div>
                         <div class="card-footer">
                             <div class="card-status status-development">
@@ -477,7 +539,8 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <div
+            style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
             <p style="color: #8892b0;">All dashboards are now working and accessible! 🎉</p>
             <p style="color: #64ffda; margin-top: 10px;">Powered by Claude Code & VCP Trading System</p>
         </div>
@@ -505,4 +568,5 @@
         });
     </script>
 </body>
+
 </html>
