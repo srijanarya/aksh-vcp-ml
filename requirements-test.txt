@@ -1,0 +1,39 @@
+# Testing dependencies for BMAD Portfolio Management System
+# Install with: pip install -r requirements-test.txt
+
+# Core testing framework (Python's pytest - equivalent to Mocha/Chai/Sinon for JS)
+pytest==7.4.3
+pytest-cov==4.1.0          # Code coverage
+pytest-mock==3.12.0        # Mocking/stubbing (like Sinon.js)
+pytest-asyncio==0.21.1     # Async test support
+pytest-xdist==3.5.0        # Parallel test execution
+
+# Assertions and matchers
+pytest-benchmark==4.0.0    # Performance benchmarking
+
+# Time manipulation (like Sinon's fake timers)
+freezegun==1.4.0           # Freeze time for deterministic tests
+
+# Test data generation
+faker==22.0.0              # Generate fake data
+factory-boy==3.3.0         # Test fixtures factory
+
+# HTTP mocking
+responses==0.24.1          # Mock HTTP requests
+requests-mock==1.11.0      # Alternative HTTP mocking
+
+# Database testing
+pytest-postgresql==5.0.0   # PostgreSQL test fixtures (if needed)
+
+# Code quality
+flake8==7.0.0              # Linting
+black==23.12.1             # Code formatting
+mypy==1.8.0                # Type checking
+pylint==3.0.3              # Additional linting
+
+# Coverage reporting
+coverage[toml]==7.4.0      # Coverage with TOML support
+
+# Test reporting
+pytest-html==4.1.1         # HTML test reports
+pytest-json-report==1.5.0  # JSON test reports

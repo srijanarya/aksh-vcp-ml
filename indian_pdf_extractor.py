@@ -50,17 +50,23 @@ class IndianFinancialPDFExtractor:
                     ('table_extraction', self._extract_via_tables),
                     ('deep_analysis', self._extract_deep),
                     ('aggressive_extraction', self._extract_aggressive),
+                    ('ocr_fallback', self._extract_via_ocr),  # NEW: OCR Strategy
                 ]
                 
                 for name, func in strategies:
-                    data = func(pdf)
+                    # Pass pdf object for standard methods, path for OCR
+                    if name == 'ocr_fallback':
+                        data = func(pdf_path)
+                    else:
+                        data = func(pdf)
+                        
                     if data and len(data) >= 2:
                         result['data'] = data
                         result['status'] = 'success'
                         result['method'] = name
                         return result
                 
-                result['error'] = 'No data extracted'
+                result['error'] = 'No data extracted (even with OCR)'
                     
         except Exception as e:
             result['error'] = f'{type(e).__name__}: {str(e)}'
@@ -248,6 +254,67 @@ class IndianFinancialPDFExtractor:
         
         return metrics if len(metrics) >= 2 else None
     
+    def _extract_via_ocr(self, pdf_path: str) -> Optional[Dict]:
+        """
+        OCR Strategy: Use Tesseract to read scanned PDFs.
+        Requires 'tesseract' and 'pdf2image' to be installed.
+        """
+        try:
+            import pytesseract
+            from pdf2image import convert_from_path
+            
+            # Convert first 3 pages to images (usually results are on page 1-2)
+            images = convert_from_path(pdf_path, first_page=1, last_page=3)
+            
+            full_text = ""
+            for img in images:
+                text = pytesseract.image_to_string(img)
+                full_text += text + "\n"
+            
+            # Reuse text extraction logic on OCR output
+            metrics = {}
+            lines = full_text.split('\n')
+            
+            for line in lines:
+                line_clean = ' '.join(line.split())
+                line_lower = line_clean.lower()
+                
+                if not metrics.get('revenue'):
+                    for kw in self.keywords['revenue']:
+                        if kw in line_lower:
+                            nums = self._get_numbers(line_clean)
+                            if nums:
+                                metrics['revenue'] = nums
+                                break
+                
+                if not metrics.get('profit'):
+                    for kw in self.keywords['profit']:
+                        if kw in line_lower:
+                            nums = self._get_numbers(line_clean)
+                            if nums:
+                                metrics['profit'] = nums
+                                break
+                
+                if not metrics.get('eps'):
+                    for kw in self.keywords['eps']:
+                        if kw in line_lower:
+                            nums = self._get_numbers(line_clean)
+                            if nums:
+                                metrics['eps'] = nums
+                                break
+            
+            if len(metrics) >= 2:
+                return metrics
+                
+        except ImportError:
+            # print("Warning: pytesseract or pdf2image not installed. Skipping OCR.")
+            pass
+        except Exception as e:
+            # print(f"OCR Error: {e}")
+            pass
+            
+        return None
+
     def _get_numbers(self, text: str) -> Optional[Dict]:
         """Extract numbers from text string"""
         numbers = []

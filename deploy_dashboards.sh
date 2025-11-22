@@ -69,6 +69,7 @@ deploy_html() {
         "$LOCAL_FRONTEND/comprehensive_earnings_calendar.html" \
         "$LOCAL_FRONTEND/blockbuster.html" \
         "$LOCAL_FRONTEND/intelligence_dashboard.html" \
+        "$LOCAL_FRONTEND/market_status_dashboard.html" \
         "$AWS_USER@$AWS_HOST:$AWS_BASE_PATH/production/"
 
     if [ $? -eq 0 ]; then
@@ -77,6 +78,7 @@ deploy_html() {
         echo "   - comprehensive_earnings_calendar.html"
         echo "   - blockbuster.html"
         echo "   - intelligence_dashboard.html"
+        echo "   - market_status_dashboard.html"
     else
         echo -e "${RED}❌ Failed to deploy production dashboards${NC}"
         return 1
@@ -110,6 +112,7 @@ test_deployment() {
         "production/dashboard-hub-FINAL.html"
         "production/comprehensive_earnings_calendar.html"
         "production/intelligence_dashboard.html"
+        "production/market_status_dashboard.html"
     )
 
     for dashboard in "${dashboards[@]}"; do

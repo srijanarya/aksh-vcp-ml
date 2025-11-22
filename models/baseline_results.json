@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-20T16:06:18.638268",
+    "train_size": 15758,
+    "test_size": 3940,
+    "selected_features": [
+      "rsi_14",
+      "macd_line",
+      "bb_percent_b",
+      "volume_ratio",
+      "revenue_growth_yoy",
+      "net_profit_margin",
+      "eps_growth_yoy",
+      "day0_reaction",
+      "volume_spike_ratio",
+      "is_q1",
+      "is_q2",
+      "is_q3",
+      "is_q4"
+    ],
+    "positive_ratio": 0.0107,
+    "story": "3.1",
+    "description": "Baseline Models: Logistic Regression vs Random Forest"
+  },
+  "logistic_regression": {
+    "accuracy": 0.6627,
+    "precision": 0.0129,
+    "recall": 0.4048,
+    "f1": 0.0249,
+    "roc_auc": 0.5199
+  },
+  "random_forest": {
+    "accuracy": 0.9893,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5924
+  }
+}
